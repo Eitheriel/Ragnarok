@@ -1,0 +1,11 @@
+C:\Users\Vaclav Holub\Desktop\csharp\Ragnarok\Ragnarok\bin\Debug\netcoreapp2.2\Ragnarok.deps.json
+C:\Users\Vaclav Holub\Desktop\csharp\Ragnarok\Ragnarok\bin\Debug\netcoreapp2.2\Ragnarok.runtimeconfig.json
+C:\Users\Vaclav Holub\Desktop\csharp\Ragnarok\Ragnarok\bin\Debug\netcoreapp2.2\Ragnarok.runtimeconfig.dev.json
+C:\Users\Vaclav Holub\Desktop\csharp\Ragnarok\Ragnarok\bin\Debug\netcoreapp2.2\Ragnarok.dll
+C:\Users\Vaclav Holub\Desktop\csharp\Ragnarok\Ragnarok\bin\Debug\netcoreapp2.2\Ragnarok.pdb
+C:\Users\Vaclav Holub\Desktop\csharp\Ragnarok\Ragnarok\obj\Debug\netcoreapp2.2\Ragnarok.csprojAssemblyReference.cache
+C:\Users\Vaclav Holub\Desktop\csharp\Ragnarok\Ragnarok\obj\Debug\netcoreapp2.2\Ragnarok.csproj.CoreCompileInputs.cache
+C:\Users\Vaclav Holub\Desktop\csharp\Ragnarok\Ragnarok\obj\Debug\netcoreapp2.2\Ragnarok.AssemblyInfoInputs.cache
+C:\Users\Vaclav Holub\Desktop\csharp\Ragnarok\Ragnarok\obj\Debug\netcoreapp2.2\Ragnarok.AssemblyInfo.cs
+C:\Users\Vaclav Holub\Desktop\csharp\Ragnarok\Ragnarok\obj\Debug\netcoreapp2.2\Ragnarok.dll
+C:\Users\Vaclav Holub\Desktop\csharp\Ragnarok\Ragnarok\obj\Debug\netcoreapp2.2\Ragnarok.pdb

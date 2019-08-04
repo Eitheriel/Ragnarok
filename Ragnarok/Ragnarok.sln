@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ragnarok", "Ragnarok.csproj", "{A05C2CD4-1146-4949-817C-E52CA91BAF63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A05C2CD4-1146-4949-817C-E52CA91BAF63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05C2CD4-1146-4949-817C-E52CA91BAF63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05C2CD4-1146-4949-817C-E52CA91BAF63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05C2CD4-1146-4949-817C-E52CA91BAF63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5E8DAFD-7C63-4001-8104-55A2048BB09D}
+	EndGlobalSection
+EndGlobal
