@@ -7,10 +7,12 @@ namespace Ragnarok
     public class Hero
     {
         public string Name { get; }
+        public Bojiste Location { get; private set; }
         public List<Veci> CoMasPoKapsach { get; set; }
 
-        public Hero (string vlozJmeno)
+        public Hero (string vlozJmeno, Bojiste misto)
         {
+            Location = misto;
             Name = vlozJmeno;
             CoMasPoKapsach = new List<Veci>();
         }
@@ -23,6 +25,10 @@ namespace Ragnarok
             {
                 Console.WriteLine($"{i}: {CoMasPoKapsach[i]}");
             }
+        }
+        public void setLocation(Bojiste misto)
+        {
+            Location = misto;
         }
 
         public override string ToString()

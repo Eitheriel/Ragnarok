@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ragnarok
 {
-    class Priroda
+    public class Priroda
     {
         public string typ { get; }
 

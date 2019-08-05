@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ragnarok
 {
-    class Armada
+    public class Armada
     {
         public string jmenoArmady { get; }
         public bool nepritel { get; }
