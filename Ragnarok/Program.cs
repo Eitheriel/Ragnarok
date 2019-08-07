@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
 
 namespace Ragnarok
 {
     class Program
     {
-
+         
         static void Main(string[] args)
         {
             Armada OhniviObri= new Armada("Ohniví Obři", false);
