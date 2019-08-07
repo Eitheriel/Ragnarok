@@ -7,6 +7,7 @@ namespace Ragnarok
     public class Hero
     {
         public string Name { get; }
+        public bool alive { get; private set; }
         public Bojiste Location { get; private set; }
         public List<Veci> CoMasPoKapsach { get; set; }
 
@@ -15,6 +16,7 @@ namespace Ragnarok
             Location = misto;
             Name = vlozJmeno;
             CoMasPoKapsach = new List<Veci>();
+            alive = true;
         }
 
         public void PodivejSeDoKapes()
@@ -26,6 +28,10 @@ namespace Ragnarok
                 Console.WriteLine($"{i}: {CoMasPoKapsach[i]}");
             }
         }
+        public void setDead()
+        {
+            alive = false;
+        }
         public void setLocation(Bojiste misto)
         {
             Location = misto;
@@ -33,7 +39,7 @@ namespace Ragnarok
 
         public override string ToString()
         {
-            return $"Já jsem {Name}!";
+            return Name;
         }
     }
 }

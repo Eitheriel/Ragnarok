@@ -8,7 +8,9 @@ namespace Ragnarok
     {
         public string jmenoArmady { get; }
         public bool nepritel { get; }
-        public Armada (string jmeno, bool nepritel)
+
+        public string heslo { get; }
+        public Armada (string jmeno, bool nepritel, string heslo)
         {
             jmenoArmady = jmeno;
             this.nepritel = nepritel;
