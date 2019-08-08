@@ -22,24 +22,19 @@ namespace Ragnarok
         public void PodivejSeDoKapes()
         {
             //CoMasPoKapsach.ForEach(n => Console.WriteLine(n));
-            
-            for (int i=1; i < CoMasPoKapsach.Count; i++)
+
+            for (int i = 1; i < CoMasPoKapsach.Count; i++)
             {
                 Console.WriteLine($"{i}: {CoMasPoKapsach[i]}");
             }
         }
-        public void setDead()
-        {
-            alive = false;
-        }
-        public void setLocation(Bojiste misto)
-        {
-            Location = misto;
-        }
 
-        public override string ToString()
-        {
-            return Name;
-        }
+        public void VecJePryc(Veci vec) => _ = CoMasPoKapsach.Remove(vec);
+
+        public void setDead() => alive = false;
+
+        public void setLocation(Bojiste misto) => Location = misto;
+
+        public override string ToString() => Name;
     }
 }

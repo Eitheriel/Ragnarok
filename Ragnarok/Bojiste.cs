@@ -23,14 +23,8 @@ namespace Ragnarok
 
         // když už bude lokace projitá (splněný úkol), přehodí se to na false, 
         // aby se ve switchi objevila hláška, že už je lokace projitá.
-        public void setActiveFalse()
-        {
-            active = false;
-        }
+        public void setActiveFalse() => active = false;
 
-        public override string ToString()
-        {
-            return castBojiste;
-        }
+        public override string ToString() => castBojiste;
     }
 }

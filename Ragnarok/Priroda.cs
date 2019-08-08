@@ -13,9 +13,6 @@ namespace Ragnarok
             typ = nazevTypu;
         }
 
-        public override string ToString()
-        {
-            return typ;
-        }
+        public override string ToString() => typ;
     }
 }

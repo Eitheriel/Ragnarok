@@ -8,17 +8,28 @@ namespace Ragnarok
     {
         public string jmenoArmady { get; }
         public bool nepritel { get; }
-
         public string heslo { get; }
-        public Armada (string jmeno, bool nepritel, string heslo)
+        public string message { get; }
+        public bool prirodaCheck { get; private set; }
+        public bool inventoryCheck { get; private set; }
+        public bool specialCheck { get; private set; }
+
+        public Armada (string jmeno, bool nepritel, string heslo, string message)
         {
             jmenoArmady = jmeno;
+            this.heslo = heslo;
             this.nepritel = nepritel;
+            this.message = message;
+
+            prirodaCheck = true;
+            inventoryCheck = true;
+            specialCheck = true;
         }
 
-        public override string ToString()
-        {
-            return jmenoArmady;
-        }
+        public void PrirodaFalse() => prirodaCheck = false;
+        public void InventoryFalse() => inventoryCheck = false;
+        public void SpecialFalse() => specialCheck = false;
+        public override string ToString() => jmenoArmady;
+
     }
 }

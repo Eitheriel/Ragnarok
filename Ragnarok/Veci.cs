@@ -20,10 +20,7 @@ namespace Ragnarok
             return true;
         }*/
 
-        public override string ToString()
-        {
-            return jmenoVeci;
-        }
+        public override string ToString() => jmenoVeci;
 
     }
 }
