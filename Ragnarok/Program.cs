@@ -46,9 +46,28 @@ namespace Ragnarok
             Surtr.CoMasPoKapsach.Add(new Veci("Žvýkačky Winterfresh","zvejky"));
             Veci mec = new Veci("Surtalogi", "Freyova hlava");
 
-            Console.WriteLine($"Jmenuješ se {Surtr} a přišel jsi z {Surtr.Location}u, abys v poslední bitvě spálil svět.");
+            Console.WriteLine($" ______                                  _    " +
+                $"\n | ___ \\                                | |   " +
+                $"\n | |_/ /__ _  __ _ _ __   __ _ _ __ ___ | | __" +
+                $"\n |    // _` |/ _` | '_ \\ / _` | '__/ _ \\| |/ /" +
+                $"\n | |\\ \\ (_| | (_| | | | | (_| | | | (_) |   < " +
+                $"\n \\_| \\_\\__,_|\\__, |_| |_|\\__,_|_|  \\___/|_|\\_\\ " +
+                $"\n             __/ |                           " +
+                $"\n            |___/                            \n");
+
+            Console.WriteLine("Intro:\n------\n\nPo třech letech nepřetržité zimy, označované jako Fimbulwinter (Velká zima), se v září náhle změnilo počasí a začal vát jižní vítr. Obrovské masy sněhu a ledu, které se nastřádaly za ty roky, roztály a způsobily katastrofální povodně po celém světě.\n\nA pak nadešel okamžik zvěstující příchod Ragnaroku: Vlk, který od počátku věků pronásledoval slunce po obloze, ho dohonil a spolknul. Nastala temnota a hrozné zemětřesení, kdy pukala země a také všechna pouta. A tak se osvobodil monstrózní vlk Fenrir, syn Lokiho, ze svých pout. Osvobodil se také sám Loki, uvězněný za to, že zavinil smrt Baldra.");
+            Console.ReadLine();
+            Console.WriteLine("Vše se dalo do pohybu. Obrovský Fenrir s chřátem otevřeným od země až po vrch nebeské klenby se hnal proti Ásgardu a proti bohům. Po jeho boku se plazil Jormungandr, gigantický mořský had dštící smrtící jed. V Jotunheimenu se houfovali ledoví obři, odvěcí nepřátelé bohů a taktéž vyrazili na pochod. Po moři k Ásgardu plula loď Naglfar - hrůzostrašný koráb zhotovený z nehtů nebožtíků - převážející nemrtvou armádu z říše mrtvých, které vládla Hel. A na jihu, v zemi Muspelheim, sedláš oře se svým vojskem i ty, Surtr, ohnivý obr, který od počátku světa stojí na hranicích své ohnivé říše a čeká, až přijde Ragnarok. Všichni vyrážíte proti bohům sídlícím v Ásgardu\n\nTam je poplach. Heimdall troubí ze své strážnice na obrovský roh a burcuje bohy k obraně. Odin sedlá svého osminohého koně Sleipnira a připravuje si své kouzelné kopí Gungnir, které nikdy nemine cíl. Thor si navléká rukavice síly a pás síly a naposledy si čisté své kouzelné kladivo Mjölnir. Také dalčí bohové se chystají do boje - Týr, bůh války a spravedlnosti, Heimdall - strážce, Frey - bůh plodnosti a další. Do boje se šikují armády severských hrdinů Einherjarů, nejlepších válečníků, kteří padli v bitvě a měli tu čest vstoupit do Valhally a tam se připravovat na poslední bitvu. Dalšími spojenci bohů jsou kouzelné bytosti elfové, obývající Alfheim a trpaslíci, obývající Swartalfheim. Ti budou čelit v následujících hodinách svému osudu.\n");
+            Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("A hle! Již bitva započala!\n\nOdin v zářícím brnění jedoucí v čele armád bohů vyrazil proti strašnému Fenrirovi. Hodil mu do chřtánu kopí, avšak ten jen spolknul a ihned poté i samotného bezbranného Odina. Avšak Odin byl pomstěn svým synem Vídarem Mlčenlivým, který Fenrirovi těžkou botou přišlápl dolní čelist k zemi a horní mu roztrhl, až vlk pošel.\n\nHned vedle Odina bojoval Thor s hadem Jormungandrem. Thor hodil po hadovi kladivo, kterým ho zabil, avšak umírající plaz naposled vypustil jedovatý dým, jímž Thora otrávil - ušel devět kroků a padl mrtev.\n\nTyr se pobil s další hrozivou stvůrou: psem Garmem, který původně strážil vstup do říše Hel. Navzájem se zabili.\n\nHeimdall se střetl s Lokim a také oni si vzájemně přivodili smrt.\n");
+            Console.ReadLine();
+            Console.WriteLine("Ty, Surtr, máš před sebou veliký úkol. Nejdříve se utkáš v boji s bohem Freyem a pak i s armádami bohů a jejich spojenci. Osud ti určil, že ty jediný bitvu přežiješ. Ty jediný zvítězíš a budeš zkázou tohoto světa...");
+            Console.ReadLine();
+            Console.WriteLine("...a právě teď jsi dorazil na bojiště v čele svých děsivých vojů.");
             Console.ReadLine();
             bool go = true;
+
 
             while (go) {
 
@@ -133,7 +152,6 @@ namespace Ragnarok
                                             {
                                                 Console.WriteLine("\nVyrazil jsi do útoku spolu se spojenci a oháněje se svým ohnivým mečem \n" +
                                                     "zabil jsi všechny nepřátele, až jsi zůstal na bojišti docela sám. Všichni spojenci padli v boji.\n...");
-                                                Console.ReadLine();
                                                 Surtr.Location.setActiveFalse();
                                                 break;
                                             }
@@ -295,7 +313,7 @@ namespace Ragnarok
                                                                         "turecký spolubydlící na koleji. Elegantně přiskočíš k blízké hoře, urveš její vrchol, \n" +
                                                                         "celý ho mrštíš na trpasličího krále a řekneš: 'Chytej!'\n...");
                                                                     Console.ReadLine();
-                                                                    Console.WriteLine("\nNechytil.\n...");
+                                                                    Console.WriteLine("Nechytil.\n...");
                                                                     Surtr.Location.nepritel.PrirodaFalse();
                                                                     Console.ReadLine();
                                                                 }
@@ -406,23 +424,33 @@ namespace Ragnarok
 
                                 switch (zmenaMista)
                                 {
-                                    case "Jih":
-                                    case "jih":
+                                    case "Jih": case "jih":
                                         if (Jih.active) Surtr.setLocation(Jih);
-                                        else Console.WriteLine("Na jihu už jsi vše splnil, nemáš důvod se tam vracet.");
+                                        else
+                                        {
+                                            Console.WriteLine("Na jihu už jsi vše splnil, nemáš důvod se tam vracet.");
+                                            Console.ReadLine();
+                                        }
                                         break;
 
-                                    case "Stred":
-                                    case "stred":
+                                    case "Stred": case "stred": case "Střed": case "střed":
                                         if (Stred.active) Surtr.setLocation(Stred);
-                                        else Console.WriteLine("Ve středu bojiště už jsi vše splnil, nemáš důvod se tam vracet.");
+                                        
+                                        else
+                                        {
+                                            Console.WriteLine("Ve středu bojiště už jsi vše splnil, nemáš důvod se tam vracet.");
+                                            Console.ReadLine();
+                                        }
                                         break;
 
 
-                                    case "Sever":
-                                    case "sever":
+                                    case "Sever": case "sever":
                                         if (Sever.active) Surtr.setLocation(Sever);
-                                        else Console.WriteLine("\nNa severu už jsi vše splnil, nemáš důvod se tam vracet.");
+                                        else
+                                        {
+                                            Console.WriteLine("\nNa severu už jsi vše splnil, nemáš důvod se tam vracet.");
+                                            Console.ReadLine();
+                                        }
                                         break;
 
                                     case "":
@@ -452,9 +480,10 @@ namespace Ragnarok
                                 Console.WriteLine("\nKonečně nadešla poslední chvíle světa. Zůstal jsi na bojišti úplně sám. \n" +
                                     "Všude kolem leží mrtví bohové, lidé, elfové a obři. Frey už nemůže být bohem plodnosti, \n" +
                                     "ale maximálně tak bohem popela.\n\n Zabodl jsi svůj ohnivý meč do země a zapálil jsi svět." +
-                                    "Pak ses proměnil v obrovského \nohnivého orla a zapálil i nebesa.\n...");
+                                    "Pak ses proměnil v obrovského \nohnivého orla a zapálil i nebe.\n...");
                                 Console.ReadLine();
-                                Console.WriteLine("\nVšechno hoří.Je konec.");
+                                Console.WriteLine("\nVšechno hoří. Je konec.");
+                                Console.ReadLine();
                                 go = false;
                                 break;
                             }
