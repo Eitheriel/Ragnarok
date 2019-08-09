@@ -9,7 +9,7 @@ namespace Ragnarok
         public string Name { get; }
         public bool alive { get; private set; }
         public Bojiste Location { get; private set; }
-        public List<Veci> CoMasPoKapsach { get; set; }
+        public List<Veci> CoMasPoKapsach { get; private set; }
 
         public Hero (string vlozJmeno, Bojiste misto)
         {

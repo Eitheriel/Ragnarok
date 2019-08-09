@@ -7,18 +7,16 @@ namespace Ragnarok
     public class Armada
     {
         public string jmenoArmady { get; }
-        public bool nepritel { get; }
         public string heslo { get; }
         public string message { get; }
         public bool prirodaCheck { get; private set; }
         public bool inventoryCheck { get; private set; }
         public bool specialCheck { get; private set; }
 
-        public Armada (string jmeno, bool nepritel, string heslo, string message)
+        public Armada (string jmeno, string heslo, string message)
         {
             jmenoArmady = jmeno;
             this.heslo = heslo;
-            this.nepritel = nepritel;
             this.message = message;
 
             prirodaCheck = true;
