@@ -65,7 +65,7 @@ namespace Ragnarok
             Console.WriteLine("Ty, Surtr, máš před sebou veliký úkol. Nejdříve se utkáš v boji s bohem Freyem a pak i s armádami bohů a jejich spojenci. Osud ti určil, že ty jediný bitvu přežiješ. Ty jediný zvítězíš a budeš zkázou tohoto světa...");
             Console.ReadLine();
             Console.WriteLine("...a právě teď jsi dorazil na bojiště v čele svých děsivých vojů.");
-            Console.ReadLine();
+            Console.ReadLine(); 
             bool go = true;
 
 
