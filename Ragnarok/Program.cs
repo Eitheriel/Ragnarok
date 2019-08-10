@@ -29,11 +29,11 @@ namespace Ragnarok
             Einherjars.SpecialFalse();
 
             Priroda Les = new Priroda("Les");
-            Priroda More = new Priroda("More");
+            Priroda More = new Priroda("Moře");
             Priroda Hory = new Priroda("Hory");
 
             Bojiste Jih = new Bojiste("Jih", Hory, OhniviObri, Elfove);
-            Bojiste Stred = new Bojiste("Stred", Les, LedoviObri, Einherjars);
+            Bojiste Stred = new Bojiste("Střed", Les, LedoviObri, Einherjars);
             Bojiste Sever = new Bojiste("Sever", More, ArmadyHelu, Asgardane);
             Bojiste[] seznamBojist = { Jih, Stred, Sever };
 
