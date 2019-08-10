@@ -57,7 +57,7 @@ namespace Ragnarok
 
             Console.WriteLine("Intro:\n------\n\nPo třech letech nepřetržité zimy, označované jako Fimbulwinter (Velká zima), se v září náhle změnilo počasí a začal vát jižní vítr. Obrovské masy sněhu a ledu, které se nastřádaly za ty roky, roztály a způsobily katastrofální povodně po celém světě.\n\nA pak nadešel okamžik zvěstující příchod Ragnaroku: Vlk, který od počátku věků pronásledoval slunce po obloze, ho dohonil a spolknul. Nastala temnota a hrozné zemětřesení, kdy pukala země a také všechna pouta. A tak se osvobodil monstrózní vlk Fenrir, syn Lokiho, ze svých pout. Osvobodil se také sám Loki, uvězněný za to, že zavinil smrt Baldra.");
             Console.ReadLine();
-            Console.WriteLine("Vše se dalo do pohybu. Obrovský Fenrir s chřátem otevřeným od země až po vrch nebeské klenby se hnal proti Ásgardu a proti bohům. Po jeho boku se plazil Jormungandr, gigantický mořský had dštící smrtící jed. V Jotunheimenu se houfovali ledoví obři, odvěcí nepřátelé bohů a taktéž vyrazili na pochod. Po moři k Ásgardu plula loď Naglfar - hrůzostrašný koráb zhotovený z nehtů nebožtíků - převážející nemrtvou armádu z říše mrtvých, které vládla Hel. A na jihu, v zemi Muspelheim, sedláš oře se svým vojskem i ty, Surtr, ohnivý obr, který od počátku světa stojí na hranicích své ohnivé říše a čeká, až přijde Ragnarok. Všichni vyrážíte proti bohům sídlícím v Ásgardu\n\nTam je poplach. Heimdall troubí ze své strážnice na obrovský roh a burcuje bohy k obraně. Vládce bohů Odin sedlá svého osminohého koně Sleipnira a připravuje si své kouzelné kopí Gungnir, které nikdy nemine cíl. Mocný Thor si navléká rukavice síly a pás síly a naposledy si čisté své kouzelné kladivo Mjölnir. Také dalčí bohové se chystají do boje - Týr, bůh války a spravedlnosti, Heimdall - strážce Ásgardu a Bifröstu, Frey - bůh plodnosti a další. Do boje se šikují armády severských hrdinů Einherjarů, nejlepších válečníků, kteří padli v bitvě a měli tu čest vstoupit do Valhally a tam se připravovat na poslední bitvu. Dalšími spojenci bohů jsou kouzelné bytosti elfové, obývající Alfheim a trpaslíci, obývající Swartalfheim. Ti všichni budou čelit v následujících hodinách svému osudu.\n");
+            Console.WriteLine("Vše se dalo do pohybu. Obrovský Fenrir s chřtánem otevřeným od země až po vrch nebeské klenby se hnal proti Ásgardu a proti bohům. Po jeho boku se plazil Jormungandr, gigantický mořský had dštící smrtící jed. V Jotunheimenu se houfovali ledoví obři, odvěcí nepřátelé bohů a taktéž vyrazili na pochod. Po moři k Ásgardu plula loď Naglfar - hrůzostrašný koráb zhotovený z nehtů nebožtíků - převážející nemrtvou armádu z říše mrtvých, které vládla Hel. A na jihu, v zemi Muspelheim, sedláš oře se svým vojskem i ty, Surtr, ohnivý obr, který od počátku světa stojí na hranicích své ohnivé říše a čeká, až přijde Ragnarok. Všichni vyrážíte proti bohům sídlícím v Ásgardu\n\nTam je poplach. Heimdall troubí ze své strážnice na obrovský roh a burcuje bohy k obraně. Vládce bohů Odin sedlá svého osminohého koně Sleipnira a připravuje si své kouzelné kopí Gungnir, které nikdy nemine cíl. Mocný Thor si navléká rukavice síly a pás síly a naposledy si čisté své kouzelné kladivo Mjölnir. Také dalčí bohové se chystají do boje - Týr, bůh války a spravedlnosti, Heimdall - strážce Ásgardu a Bifröstu, Frey - bůh plodnosti a další. Do boje se šikují armády severských hrdinů Einherjarů, nejlepších válečníků, kteří padli v bitvě a měli tu čest vstoupit do Valhally a tam se připravovat na poslední bitvu. Dalšími spojenci bohů jsou kouzelné bytosti elfové, obývající Alfheim a trpaslíci, obývající Swartalfheim. Ti všichni budou čelit v následujících hodinách svému osudu.\n");
             Console.ReadLine();
             Console.Clear();
             Console.WriteLine("A hle! Již bitva započala!\n\nOdin v zářícím brnění jedoucí v čele armád bohů vyrazil na planině Vigríd před Ásgardem proti strašnému Fenrirovi. Hodil mu do chřtánu kopí, avšak ten jen spolknul a ihned poté i samotného bezbranného Odina. Avšak Odin byl pomstěn svým synem Vídarem Mlčenlivým, který Fenrirovi těžkou botou přišlápl dolní čelist k zemi a horní mu roztrhl, až vlk pošel.\n\nHned vedle Odina bojoval Thor s hadem Jormungandrem. Thor hodil po hadovi kladivo, kterým ho zabil, avšak umírající plaz naposled vypustil jedovatý dým, jímž Thora otrávil - ušel devět kroků a padl mrtev.\n\nTyr se pobil s další hrozivou stvůrou: psem Garmem, který původně strážil vstup do říše Hel. Navzájem se zabili.\n\nHeimdall se střetl s Lokim a také oni si vzájemně přivodili smrt.");
@@ -188,7 +188,7 @@ namespace Ragnarok
                                             }
                                             else
                                             {
-                                                Console.WriteLine("\nNepřátelé se na tebe sesypali jak vosy. Takticky jsi ustoupil.");
+                                                Console.WriteLine("\nNepřátelé jsou příliš silní, než abys je porazil. Budeš muset něco vymyslet...");
                                                 Console.ReadLine();
                                             }
                                             continue;
@@ -362,6 +362,7 @@ namespace Ragnarok
                                                                     "zde hojnost divoké zvěře, ptactva i lesních plodů.");
                                                                 Console.ReadLine();
                                                                 Console.WriteLine("\nNo ale to je ti teď stejně k hovnu.");
+                                                                Console.ReadLine();
                                                             }
 
                                                             else
@@ -443,7 +444,7 @@ namespace Ragnarok
                             while (true)
                             {
                                 Console.WriteLine($"\nTvým bojištěm je nyní {Surtr.Location}. Můžeš si vybrat:\n\nBuď zůstaneš tam, kde jsi (zmáčkni Enter)," +
-                                    "\nnebo můžeš jít na:\n");
+                                    "\nnebo napiš do konzole místo, kam chceš jít:\n");
 
                                 foreach (Bojiste b in seznamBojist)
                                 {
@@ -456,7 +457,12 @@ namespace Ragnarok
                                 switch (zmenaMista)
                                 {
                                     case "Jih": case "jih":
-                                        if (Jih.active) Surtr.setLocation(Jih);
+                                        if (Jih.active)
+                                        {
+                                            Surtr.setLocation(Jih);
+                                            Console.WriteLine($"\nPřesunul ses do lokace {Surtr.Location}");
+                                            Console.ReadLine();
+                                        }
                                         else
                                         {
                                             Console.WriteLine("Na jihu už jsi vše splnil, nemáš důvod se tam vracet.");
@@ -465,8 +471,13 @@ namespace Ragnarok
                                         break;
 
                                     case "Stred": case "stred": case "Střed": case "střed":
-                                        if (Stred.active) Surtr.setLocation(Stred);
-                                        
+                                        if (Stred.active)
+                                        {
+                                            Surtr.setLocation(Stred);
+                                            Console.WriteLine($"\nPřesunul ses do lokace {Surtr.Location}");
+                                            Console.ReadLine();
+                                        }
+
                                         else
                                         {
                                             Console.WriteLine("Ve středu bojiště už jsi vše splnil, nemáš důvod se tam vracet.");
@@ -476,7 +487,12 @@ namespace Ragnarok
 
 
                                     case "Sever": case "sever":
-                                        if (Sever.active) Surtr.setLocation(Sever);
+                                        if (Sever.active)
+                                        {
+                                            Surtr.setLocation(Sever);
+                                            Console.WriteLine($"\nPřesunul ses do lokace {Surtr.Location}");
+                                            Console.ReadLine();
+                                        }
                                         else
                                         {
                                             Console.WriteLine("\nNa severu už jsi vše splnil, nemáš důvod se tam vracet.");
@@ -525,7 +541,7 @@ namespace Ragnarok
                                     "\n   `9XXXXXXXXXXXXXXXXXXXX'~   ~`OOO8b   d8OOO'~   ~`XXXXXXXXXXXXXXXXXXXXXP'" +
                                     "\n    `9XXXXXXXXXXXP' `9XX'          `98V8P'          `XXP' `9XXXXXXXXXXXP' " +
                                     "\n        ~~~~~~~       9X.          .db|db.          .XP       ~~~~~~~" +
-                                    "\n                        )b.  .dbo.dP'`v'`9b.odb.  .dX(" +
+                                    "\n                       )Xb.  .dbo.dP'`v'`9b.odb.  .dX(" +
                                     "\n                      ,dXXXXXXXXXXXb     dXXXXXXXXXXXb." +
                                     "\n                     dXXXXXXXXXXXP'   .   `9XXXXXXXXXXXb" +
                                     "\n                    dXXXXXXXXXXXXb   d|b   dXXXXXXXXXXXXb" +
@@ -535,7 +551,8 @@ namespace Ragnarok
                                     "\n                              XP^X'`b   d'`X^XX" +
                                     "\n                              X. 9  `   '  P )X" +
                                     "\n                              `b  `       '  d' " +
-                                    "\n                               `             '");
+                                    "\n                               `             '" +
+                                    "");
                                 Console.ReadLine();
                                 go = false;
                                 break;
