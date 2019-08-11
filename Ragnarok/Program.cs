@@ -360,47 +360,16 @@ namespace Ragnarok
                                 switch (zmenaMista)
                                 {
                                     case "Jih": case "jih":
-                                        if (Jih.active)
-                                        {
-                                            Surtr.setLocation(Jih);
-                                            Console.WriteLine($"\nPřesunul ses do lokace {Surtr.Location}.");
-                                            Console.ReadLine();
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine("Na jihu už jsi vše splnil, nemáš důvod se tam vracet.");
-                                            Console.ReadLine();
-                                        }
+                                        Bojiste.ChangeLocation(Jih, Surtr);
                                         break;
 
                                     case "Stred": case "stred": case "Střed": case "střed":
-                                        if (Stred.active)
-                                        {
-                                            Surtr.setLocation(Stred);
-                                            Console.WriteLine($"\nPřesunul ses do lokace {Surtr.Location}");
-                                            Console.ReadLine();
-                                        }
-
-                                        else
-                                        {
-                                            Console.WriteLine("Ve středu bojiště už jsi vše splnil, nemáš důvod se tam vracet.");
-                                            Console.ReadLine();
-                                        }
+                                        Bojiste.ChangeLocation(Stred, Surtr);
                                         break;
 
 
                                     case "Sever": case "sever":
-                                        if (Sever.active)
-                                        {
-                                            Surtr.setLocation(Sever);
-                                            Console.WriteLine($"\nPřesunul ses do lokace {Surtr.Location}");
-                                            Console.ReadLine();
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine("\nNa severu už jsi vše splnil, nemáš důvod se tam vracet.");
-                                            Console.ReadLine();
-                                        }
+                                        Bojiste.ChangeLocation(Sever, Surtr);
                                         break;
 
                                     case "":
@@ -420,7 +389,6 @@ namespace Ragnarok
 
                             if (Frey.alive)
                             {
-                                Console.Clear();
                                 Console.WriteLine($"\nPo úvodu bitvy se postavíš jednomu z hlavních bohů - {Frey}ovi. Víš, že\n" +
                                     $"u sebe nemá zbraň - kouzelný meč, kterého se vzdal kvůli své lásce.");
                                 Console.ReadLine();

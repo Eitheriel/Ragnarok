@@ -25,6 +25,21 @@ namespace Ragnarok
         // aby se ve switchi objevila hláška, že už je lokace projitá.
         public void setActiveFalse() => active = false;
 
+        public static void ChangeLocation(Bojiste Boj, Hero hero)
+        {
+            if (Boj.active)
+            {
+                hero.setLocation(Boj);
+                Console.WriteLine($"\nPřesunul ses do lokace {hero.Location}.");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Na jihu už jsi vše splnil, nemáš důvod se tam vracet.");
+                Console.ReadLine();
+            }
+        }
+
         public override string ToString() => castBojiste;
     }
 }
