@@ -7,19 +7,14 @@ namespace Ragnarok
 {
     class Program
     {
-         
         static void Main(string[] args)
         {
-            string proLedove = "\nRozdal jsi žvýkačky Winterfresh těm nejsilnějším ledovým obrům. Jejich dech začal být tak ledový, že jím dokázali zmrazit řady nepřátel na jeden nádech. S tímhle určitě bitvu vyhrajete!";
-            string proAsgard = "\nAsgarďané nechápali, co děláš, jen několik valkýr na tebe vrhlo velice zajímavý pohled, při kterém jsi zalitoval, že tento den už nebude mít večer (a noc).";
-            string proZbytek = "";
-
-            Armada OhniviObri= new Armada("Ohniví Obři", "nic", proZbytek);
-            Armada LedoviObri = new Armada("Ledoví obři", "zvejky",proLedove);
-            Armada ArmadyHelu = new Armada("Armády říše Hell", "nic", proZbytek);
-            Armada Elfove = new Armada("Elfové a trpaslíci", "nic", proZbytek);
-            Armada Asgardane = new Armada("Asgarďané", "kondomy",proAsgard);
-            Armada Einherjars = new Armada("Einherjars", "nic", proZbytek);
+            Armada OhniviObri= new Armada("Ohniví Obři", "nic", Texts.proZbytek);
+            Armada LedoviObri = new Armada("Ledoví obři", "zvejky", Texts.proLedove);
+            Armada ArmadyHelu = new Armada("Armády říše Hell", "nic", Texts.proZbytek);
+            Armada Elfove = new Armada("Elfové a trpaslíci", "nic", Texts.proZbytek);
+            Armada Asgardane = new Armada("Asgarďané", "kondomy", Texts.proAsgard);
+            Armada Einherjars = new Armada("Einherjars", "nic", Texts.proZbytek);
 
             //Prednastavení cílů
             Elfove.InventoryFalse();
@@ -46,25 +41,19 @@ namespace Ragnarok
             Surtr.CoMasPoKapsach.Add(new Veci("Žvýkačky Winterfresh","zvejky"));
             Veci mec = new Veci("Surtalogi", "Freyova hlava");
 
-            Console.WriteLine($" ______                                  _    " +
-                $"\n | ___ \\                                | |   " +
-                $"\n | |_/ /__ _  __ _ _ __   __ _ _ __ ___ | | __" +
-                $"\n |    // _` |/ _` | '_ \\ / _` | '__/ _ \\| |/ /" +
-                $"\n | |\\ \\ (_| | (_| | | | | (_| | | | (_) |   < " +
-                $"\n \\_| \\_\\__,_|\\__, |_| |_|\\__,_|_|  \\___/|_|\\_\\ " +
-                $"\n             __/ |                           " +
-                $"\n            |___/                            \n");
+            List<string> menu = new List<string> {"1 - Půjdeš do boje!", "2 - Půjdeš do jiné části bojiště", "3 - Utkáš se s Freyem"};
 
-            Console.WriteLine("Intro:\n------\n\nPo třech letech nepřetržité zimy, označované jako Fimbulwinter (Velká zima), se v září náhle změnilo počasí a začal vát jižní vítr. Obrovské masy sněhu a ledu, které se nastřádaly za ty roky, roztály a způsobily katastrofální povodně po celém světě.\n\nA pak nadešel okamžik zvěstující příchod Ragnaroku: Vlk, který od počátku věků pronásledoval slunce po obloze, ho dohonil a spolknul. Nastala temnota a hrozné zemětřesení, kdy pukala země a také všechna pouta. A tak se osvobodil monstrózní vlk Fenrir, syn Lokiho, ze svých pout. Osvobodil se také sám Loki, uvězněný za to, že zavinil smrt Baldra.");
+            Console.WriteLine(Texts.gameLogo);
+            Console.WriteLine(Texts.intro1);
             Console.ReadLine();
-            Console.WriteLine("Vše se dalo do pohybu. Obrovský Fenrir s chřtánem otevřeným od země až po vrch nebeské klenby se hnal proti Ásgardu a proti bohům. Po jeho boku se plazil Jormungandr, gigantický mořský had dštící smrtící jed. V Jotunheimenu se houfovali ledoví obři, odvěcí nepřátelé bohů a taktéž vyrazili na pochod. Po moři k Ásgardu plula loď Naglfar - hrůzostrašný koráb zhotovený z nehtů nebožtíků - převážející nemrtvou armádu z říše mrtvých, které vládla Hel. A na jihu, v zemi Muspelheim, sedláš oře se svým vojskem i ty, Surtr, ohnivý obr, který od počátku světa stojí na hranicích své ohnivé říše a čeká, až přijde Ragnarok. Všichni vyrážíte proti bohům sídlícím v Ásgardu\n\nTam je poplach. Heimdall troubí ze své strážnice na obrovský roh a burcuje bohy k obraně. Vládce bohů Odin sedlá svého osminohého koně Sleipnira a připravuje si své kouzelné kopí Gungnir, které nikdy nemine cíl. Mocný Thor si navléká rukavice síly a pás síly a naposledy si čisté své kouzelné kladivo Mjölnir. Také dalčí bohové se chystají do boje - Týr, bůh války a spravedlnosti, Heimdall - strážce Ásgardu a Bifröstu, Frey - bůh plodnosti a další. Do boje se šikují armády severských hrdinů Einherjarů, nejlepších válečníků, kteří padli v bitvě a měli tu čest vstoupit do Valhally a tam se připravovat na poslední bitvu. Dalšími spojenci bohů jsou kouzelné bytosti elfové, obývající Alfheim a trpaslíci, obývající Swartalfheim. Ti všichni budou čelit v následujících hodinách svému osudu.\n");
+            Console.WriteLine(Texts.intro2);
             Console.ReadLine();
             Console.Clear();
-            Console.WriteLine("A hle! Již bitva započala!\n\nOdin v zářícím brnění jedoucí v čele armád bohů vyrazil na planině Vigríd před Ásgardem proti strašnému Fenrirovi. Hodil mu do chřtánu kopí, avšak ten jen spolknul a ihned poté i samotného bezbranného Odina. Avšak Odin byl pomstěn svým synem Vídarem Mlčenlivým, který Fenrirovi těžkou botou přišlápl dolní čelist k zemi a horní mu roztrhl, až vlk pošel.\n\nHned vedle Odina bojoval Thor s hadem Jormungandrem. Thor hodil po hadovi kladivo, kterým ho zabil, avšak umírající plaz naposled vypustil jedovatý dým, jímž Thora otrávil - ušel devět kroků a padl mrtev.\n\nTyr se pobil s další hrozivou stvůrou: psem Garmem, který původně strážil vstup do říše Hel. Navzájem se zabili.\n\nHeimdall se střetl s Lokim a také oni si vzájemně přivodili smrt.");
+            Console.WriteLine(Texts.intro3);
             Console.ReadLine();
-            Console.WriteLine("Ty, Surtr, máš před sebou veliký úkol. Nejdříve se utkáš v boji s bohem Freyem a pak i s armádami bohů a jejich spojenci. Osud ti určil, že ty jediný bitvu přežiješ. Ty jediný zvítězíš a budeš zkázou tohoto světa...");
+            Console.WriteLine(Texts.intro4);
             Console.ReadLine();
-            Console.WriteLine("...a právě teď jsi dorazil na bojiště v čele svých děsivých vojů.\n");
+            Console.WriteLine(Texts.intro5);
             Console.ReadLine();
 
             bool go = true;
@@ -74,91 +63,20 @@ namespace Ragnarok
 
                 while (true)
                 {
+                    if (!Jih.active && !Sever.active && !Stred.active && !Frey.alive && !menu.Contains("3 - Zničíš celý svět"))
+                    {
+                        menu.Add("3 - Zničíš celý svět");
+                    }
+
                     Console.Clear();
-                    Console.WriteLine(" Co uděláš?\n" +
-                        " ----------\n" +
-                        "\n 1 - Utkáš se s Freyem" +
-                        "\n 2 - Půjdeš do boje!" +
-                        "\n 3 - Půjdeš do jiné části bojiště" +
-                        "\n 4 - Podíváš se do inventáře" +
-                        "\n 5 - Zapálíš celý svět\n" +
-                        "\nO=={::::::::::> <::::::::::}==O\n");
+                    Console.WriteLine(" Co uděláš?\n ----------\n");
+                    menu.ForEach(x => Console.WriteLine(x));
+                    Console.WriteLine("\nO=={::::::::::> <::::::::::}==O\n");
                     string rozhodnuti = Console.ReadLine();
 
                     switch (rozhodnuti)
                     {
                         case "1":
-                            if (Frey.alive)
-                            {
-                                Console.Clear();
-                                Console.WriteLine($"\nPo úvodu bitvy se postavíš jednomu z hlavních bohů - {Frey}ovi. Víš, že\n" +
-                                    $"u sebe nemá zbraň - kouzelný meč, kterého se vzdal kvůli své lásce.");
-                                Console.ReadLine();
-                                Console.WriteLine("Máš dvě možnosti:\n\n" +
-                                    $"1 - Zabiješ ho\n2 - Pustíš mu písničku Dirty Harry od Gorillaz \n https://www.youtube.com/watch?v=cLnkQAeMbIM \n");
-                                while (true)
-                                {
-                                    string tezkeRozhodnuti = Console.ReadLine();
-                                    switch (tezkeRozhodnuti)
-                                    {
-                                        case "1":
-                                            Console.WriteLine($"\nZaútočil jsi na {Frey}e a s obří silou jsi ho svým ohnivým mečem {mec}m \nrozsekl " +
-                                                $"ve dví, až z něj zbyl jen černý škvarek." +
-                                                $"\n       ." +
-                                                $"\n      .M" +
-                                                $"\n     ,MM" +
-                                                $"\n     MM:" +
-                                                $"\n .   YMM," +
-                                                $"\n M   'MMM,     ," +
-                                                $"\n M.   `MMM    .M " +
-                                                $"\n MM,  ,MMM   ,MM" +
-                                                $"\n \"MM, MMM'  ,MM'" +
-                                                $"\n ,MMM.MMMMM.MMM," +
-                                                $"\n MMMMMMMMMMMMMMM" +
-                                                $"\n MMMMMMMMMMMMMMM" +
-                                                $"\n 'MMMMMMMMMMMMM'" +
-                                                $"\n   \"\"\"\"\"\"\"\"\"\"\"");
-                                            Frey.setDead();
-                                            Console.ReadLine();
-                                            break;
-
-                                        case "2":
-                                            Console.WriteLine($"\nNasral jsi ho.");
-                                            Console.ReadLine();
-                                            Console.WriteLine($"\nPak jsi ho svým ohnivým mečem rozsekl " +
-                                                $"ve dví, až z něj zbyl jen černý škvarek." +
-                                                $"\n       ." +
-                                                $"\n      .M" +
-                                                $"\n     ,MM" +
-                                                $"\n     MM:" +
-                                                $"\n .   YMM," +
-                                                $"\n M   'MMM,     ," +
-                                                $"\n M.   `MMM    .M " +
-                                                $"\n MM,  ,MMM   ,MM" +
-                                                $"\n \"MM, MMM'  ,MM'" +
-                                                $"\n ,MMM.MMMMM.MMM," +
-                                                $"\n MMMMMMMMMMMMMMM" +
-                                                $"\n MMMMMMMMMMMMMMM" +
-                                                $"\n 'MMMMMMMMMMMMM'" +
-                                                $"\n   \"\"\"\"\"\"\"\"\"\"\"");
-                                            Frey.setDead();
-                                            Console.ReadLine();
-                                            break;
-                                        default:
-                                            continue;
-                                    }
-                                    break;
-                                }
-                            }
-                            else
-                            {
-                                Console.Clear();
-                                Console.WriteLine($"\n{Frey}e už jsi zabil.");
-                                Console.ReadLine();
-                            }
-                            break;
-
-                        case "2":
                             Console.Clear();
                             if (Surtr.Location.active)
                             {
@@ -181,8 +99,7 @@ namespace Ragnarok
                                         case "1":
                                             if (Surtr.Location.nepritel.prirodaCheck == false && Surtr.Location.nepritel.inventoryCheck == false && Surtr.Location.nepritel.specialCheck == false)
                                             {
-                                                Console.WriteLine("\nVyrazil jsi do útoku spolu se spojenci a oháněje se svým ohnivým mečem \n" +
-                                                    "zabil jsi všechny nepřátele, až jsi zůstal na bojišti docela sám. Všichni spojenci padli v boji.");
+                                                Console.WriteLine("\nVyrazil jsi do útoku spolu se spojenci a oháněje se svým ohnivým mečem \nzabil jsi všechny nepřátele, až jsi zůstal na bojišti docela sám. Všichni spojenci padli v boji.");
                                                 Surtr.Location.setActiveFalse();
                                                 break;
                                             }
@@ -338,11 +255,7 @@ namespace Ragnarok
                                                             {
                                                                 if (Surtr.Location.nepritel.prirodaCheck)
                                                                 {
-                                                                    Console.WriteLine("\nDíváš se kolem sebe a vidíš za sebou majestátní pohoří. Zprava se k tobě \n" +
-                                                                        "blíží armáda trpaslíků, těch horských červů, vedená samotným trpasličím králem. Náhle dostaneš spásný nápad! \n" +
-                                                                        "'Když nemůže Mohamed k hoře, musí hora k Mohamedovi', jak vždycky říkával tvůj \n" +
-                                                                        "turecký spolubydlící na koleji. Elegantně přiskočíš k blízké hoře, urveš její vrchol, \n" +
-                                                                        "celý ho mrštíš na trpasličího krále a řekneš: 'Chytej!'");
+                                                                    Console.WriteLine(Texts.event1);
                                                                     Console.ReadLine();
                                                                     Console.WriteLine("Nechytil.");
                                                                     Surtr.Location.nepritel.PrirodaFalse();
@@ -357,9 +270,7 @@ namespace Ragnarok
 
                                                             else if (Surtr.Location == Stred)
                                                             {
-                                                                Console.WriteLine("\n Prohlížíš si místní lesy. Jsou krásně husté, místy smíšené, ale většinou \n" +
-                                                                    "jehličnaté. Na kraji lesa zurčí malý pramínek, který se rozšiřuje v úzkou bystřinu. Jistě je \n" +
-                                                                    "zde hojnost divoké zvěře, ptactva i lesních plodů.");
+                                                                Console.WriteLine(Texts.event2);
                                                                 Console.ReadLine();
                                                                 Console.WriteLine("\nNo ale to je ti teď stejně k hovnu.");
                                                                 Console.ReadLine();
@@ -371,9 +282,7 @@ namespace Ragnarok
                                                                 {
                                                                     Console.WriteLine("\nJéé, moře! U moře už jsi nebyl ani nepamatuješ! Sundal sis kaťata a hupsnul do vln!");
                                                                     Console.ReadLine();
-                                                                    Console.WriteLine("\nVznešení Asgarďané, kteří byli spolu s Valkýrami v prvních řadách nepřátelské armády, \n" +
-                                                                        "měli tu smůlu, že spatřili tvé privátní partie dřív, než je zalilo milosrdné moře. Maje ten pohled \n" +
-                                                                        "před očima, nebyli schopni nadále bojovat a jen stěží se bránili dorážení tvé armády.");
+                                                                    Console.WriteLine(Texts.event3);
                                                                     Surtr.Location.nepritel.PrirodaFalse();
                                                                     Console.ReadLine();
                                                                 }
@@ -391,12 +300,7 @@ namespace Ragnarok
                                                             {
                                                                 if (Surtr.Location.nepritel.specialCheck)
                                                                 {
-                                                                    Console.WriteLine("\nTvoji vojáci jsou nervózní a vidíš, že mají pochyby o vítězství. " +
-                                                                        "Proto se rozhodneš předvést jim překvapení, které sis plánoval na vánoční besídku. " +
-                                                                        "Pozveš si k sobě generály tvých vojsk, se kterými jsi tajně trénoval a vytvořil " +
-                                                                        "folkový kvartet. A zatímco nepřítel se kvapem blíží, předstoupíte před své muže a " +
-                                                                        "začnete z plna hrdla zpívat bojovou píseň, abyste jim dodali odvahy. \n\nHlavní elf, překvapen disharmonickým zvukem, " +
-                                                                        "který z lesa neznal, se zarazil. To ti dává čas vymyslet řádný protiúder.");
+                                                                    Console.WriteLine(Texts.event4);
                                                                     Console.ReadLine();
                                                                     Surtr.Location.nepritel.SpecialFalse();
                                                                 }
@@ -439,12 +343,11 @@ namespace Ragnarok
 
                             break;
 
-                        case "3":
+                        case "2":
                             Console.Clear();
                             while (true)
                             {
-                                Console.WriteLine($"\nTvým bojištěm je nyní {Surtr.Location}. Můžeš si vybrat:\n\nBuď zůstaneš tam, kde jsi (zmáčkni Enter)," +
-                                    "\nnebo napiš do konzole místo, kam chceš jít:\n");
+                                Console.WriteLine($"\nTvým bojištěm je nyní {Surtr.Location}. Můžeš si vybrat:\n\nBuď zůstaneš tam, kde jsi (zmáčkni Enter),\nnebo napiš do konzole místo, kam chceš jít:\n");
 
                                 foreach (Bojiste b in seznamBojist)
                                 {
@@ -452,7 +355,7 @@ namespace Ragnarok
                                         Console.WriteLine(b);
                                 }
                                 Console.WriteLine("\n");
-                                    string zmenaMista = Console.ReadLine();
+                                string zmenaMista = Console.ReadLine();
 
                                 switch (zmenaMista)
                                 {
@@ -460,7 +363,7 @@ namespace Ragnarok
                                         if (Jih.active)
                                         {
                                             Surtr.setLocation(Jih);
-                                            Console.WriteLine($"\nPřesunul ses do lokace {Surtr.Location}");
+                                            Console.WriteLine($"\nPřesunul ses do lokace {Surtr.Location}.");
                                             Console.ReadLine();
                                         }
                                         else
@@ -512,54 +415,66 @@ namespace Ragnarok
                             }
                             break;
 
-                        case "4":
+                        case "3":
                             Console.Clear();
-                            Console.WriteLine("V inventáři máš:\n");
-                            Surtr.CoMasPoKapsach.ForEach(n => Console.WriteLine($"- {n}"));
-                            Console.WriteLine("\n");
-                            Console.ReadLine();
-                            break;
 
-                        case "5":
-                            Console.Clear();
-                            if (!Jih.active && !Sever.active && !Stred.active && !Frey.alive)
+                            if (Frey.alive)
                             {
-                                Console.WriteLine("\nKonečně nadešla poslední chvíle světa. Zůstal jsi na bojišti úplně sám. " +
-                                    "Všude kolem leží mrtví bohové, lidé, elfové a obři." +
-                                    "\n\n Naposledy ses nadechnul a pak jsi vší silou zarazil svůj ohnivý meč \n" +
-                                    "do země a uvrhl celý svět do plamenů.");
+                                Console.Clear();
+                                Console.WriteLine($"\nPo úvodu bitvy se postavíš jednomu z hlavních bohů - {Frey}ovi. Víš, že\n" +
+                                    $"u sebe nemá zbraň - kouzelný meč, kterého se vzdal kvůli své lásce.");
+                                Console.ReadLine();
+                                Console.WriteLine(Texts.frey1);
+                                while (true)
+                                {
+                                    string tezkeRozhodnuti = Console.ReadLine();
+                                    switch (tezkeRozhodnuti)
+                                    {
+                                        case "1":
+                                            Console.WriteLine($"\nZaútočil jsi na {Frey}e a s obří silou jsi ho svým ohnivým mečem {mec}m \nrozsekl " +
+                                                $"ve dví, až z něj zbyl jen černý škvarek.");
+                                            Console.WriteLine(Texts.freyFire);
+                                            Frey.setDead();
+                                            menu.Remove("3 - Utkáš se s Freyem");
+                                            Console.ReadLine();
+                                            break;
+
+                                        case "2":
+                                            Console.WriteLine($"\nNasral jsi ho.");
+                                            Console.ReadLine();
+                                            Console.WriteLine($"\nPak jsi ho svým ohnivým mečem rozsekl " +
+                                                $"ve dví, až z něj zbyl jen černý škvarek.");
+                                            Console.WriteLine(Texts.freyFire);
+                                            Frey.setDead();
+                                            menu.Remove("3 - Utkáš se s Freyem");
+                                            Console.ReadLine();
+                                            break;
+                                        default:
+                                            continue;
+                                    }
+                                    break;
+                                }
+                            }
+
+                            else if (!Jih.active && !Sever.active && !Stred.active && !Frey.alive)
+                            {
+                                Console.WriteLine(Texts.end1);
                                 Console.ReadLine();
                                 Console.Clear();
-                                Console.WriteLine("\n                  Nastala ohnivá apokalypsa, všechno shořelo. \n                                   Je konec." +
-                                    "\n           .                                                      ." +
-                                    "\n         .n                   .                 .                  n." +
-                                    "\n   .   .dP                  dP                   9b                 9b.   ." +
-                                    "\n  4    qXb         .       dX                     Xb       .        dXp    t" +
-                                    "\n dX.    9Xb      .dXb    __                         __    dXb.     dXP    .Xb" +
-                                    "\n 9XXb._       _.dXXXXb dXXXXbo.                .odXXXXb dXXXXb._       _.dXXP" +
-                                    "\n  9XXXXXXXXXXXXXXXXXXVXXXXXXXXOo.           .oOXXXXXXXXVXXXXXXXXXXXXXXXXXXXP" +
-                                    "\n   `9XXXXXXXXXXXXXXXXXXXX'~   ~`OOO8b   d8OOO'~   ~`XXXXXXXXXXXXXXXXXXXXXP'" +
-                                    "\n    `9XXXXXXXXXXXP' `9XX'          `98V8P'          `XXP' `9XXXXXXXXXXXP' " +
-                                    "\n        ~~~~~~~       9X.          .db|db.          .XP       ~~~~~~~" +
-                                    "\n                       )Xb.  .dbo.dP'`v'`9b.odb.  .dX(" +
-                                    "\n                      ,dXXXXXXXXXXXb     dXXXXXXXXXXXb." +
-                                    "\n                     dXXXXXXXXXXXP'   .   `9XXXXXXXXXXXb" +
-                                    "\n                    dXXXXXXXXXXXXb   d|b   dXXXXXXXXXXXXb" +
-                                    "\n                     9XXb'  `XXXXXb.dX|Xb.dXXXXX'   `dXXP" +
-                                    "\n                      `'     9XXXXXX(   )XXXXXXP      `'" +
-                                    "\n                              XXXX X.`v'.X XXXX" +
-                                    "\n                              XP^X'`b   d'`X^XX" +
-                                    "\n                              X. 9  `   '  P )X" +
-                                    "\n                              `b  `       '  d' " +
-                                    "\n                               `             '" +
-                                    "");
+                                Console.WriteLine(Texts.end2);
+                                Console.WriteLine(Texts.endPic);
                                 Console.ReadLine();
                                 go = false;
                                 break;
                             }
-                            else Console.WriteLine("\nJeště jsi nevykonal všechny úkoly, ještě není svět připraven na záhubu.");
-                                Console.ReadLine();
+
+                            else
+                            {
+                                Console.WriteLine("\nZadej správné číslo.\n");
                                 continue;
+                            }
+
+                            break;
 
                         default:
                             Console.WriteLine("\nZadej správné číslo.\n");
