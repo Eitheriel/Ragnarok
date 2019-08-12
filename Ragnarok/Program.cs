@@ -7,6 +7,11 @@ namespace Ragnarok
 {
     class Program
     {
+        public static void Message(string text)
+        {
+            Console.WriteLine(text);
+            Console.ReadLine();
+        }
         static void Main(string[] args)
         {
             Armada OhniviObri= new Armada("Ohniví Obři", "nic", Texts.proZbytek);
@@ -35,6 +40,7 @@ namespace Ragnarok
             Hero Surtr = new Hero("Surtr", Jih);
             Hero Frey = new Hero("Frey", Jih);
 
+
             Surtr.CoMasPoKapsach.Add(new Veci("Čtyři penny z výletu do Londýna","money"));
             Surtr.CoMasPoKapsach.Add(new Veci("Dávno prošlá krabička kondomů","kondomy"));
             Surtr.CoMasPoKapsach.Add(new Veci("Svačina z domova","jidlo"));
@@ -44,30 +50,27 @@ namespace Ragnarok
             List<string> menu = new List<string> {"1 - Půjdeš do boje!", "2 - Půjdeš do jiné části bojiště", "3 - Utkáš se s Freyem"};
 
             Console.WriteLine(Texts.gameLogo);
-            Console.WriteLine(Texts.intro1);
-            Console.ReadLine();
-            Console.WriteLine(Texts.intro2);
-            Console.ReadLine();
+            Message(Texts.intro1);
+            Message(Texts.intro2);
+
             Console.Clear();
-            Console.WriteLine(Texts.intro3);
-            Console.ReadLine();
-            Console.WriteLine(Texts.intro4);
-            Console.ReadLine();
-            Console.WriteLine(Texts.intro5);
-            Console.ReadLine();
+
+            Message(Texts.intro3);
+            Message(Texts.intro4);
+            Message(Texts.intro5);
 
             bool go = true;
-
 
             while (go) {
 
                 while (true)
                 {
-                    if (!Jih.active && !Sever.active && !Stred.active && !Frey.alive && !menu.Contains("3 - Zničíš celý svět"))
+                    if (!Sever.active && !Stred.active && !Jih.active && !Frey.alive)
                     {
                         menu.Add("3 - Zničíš celý svět");
                     }
 
+                    //HLAVNÍ MENU
                     Console.Clear();
                     Console.WriteLine(" Co uděláš?\n ----------\n");
                     menu.ForEach(x => Console.WriteLine(x));
@@ -76,14 +79,14 @@ namespace Ragnarok
 
                     switch (rozhodnuti)
                     {
+                        //JÍT DO BOJE
                         case "1":
                             Console.Clear();
                             if (Surtr.Location.active)
                             {
-                                Console.WriteLine($"\n{Surtr.Location} je plný bojů! Tvou část armády " +
+                                Message($"\n{Surtr.Location} je plný bojů! Tvou část armády " +
                                         $"zde tvoří {Surtr.Location.spojenec}, \nnepřítelem jsou ti {Surtr.Location.nepritel}. " +
                                         $"Co se krajiny týče, vidíš zde {Surtr.Location.priroda}.");
-                                Console.ReadLine();
 
                                 while (true)
                                 {
@@ -96,32 +99,32 @@ namespace Ragnarok
 
                                     switch (coTed)
                                     {
+                                        //NAPADNOUT ARMÁDU
                                         case "1":
                                             if (Surtr.Location.nepritel.prirodaCheck == false && Surtr.Location.nepritel.inventoryCheck == false && Surtr.Location.nepritel.specialCheck == false)
                                             {
-                                                Console.WriteLine("\nVyrazil jsi do útoku spolu se spojenci a oháněje se svým ohnivým mečem \nzabil jsi všechny nepřátele, až jsi zůstal na bojišti docela sám. Všichni spojenci padli v boji.");
+                                                Message("\nVyrazil jsi do útoku spolu se spojenci a oháněje se svým ohnivým mečem \nzabil jsi všechny nepřátele, až jsi zůstal na bojišti docela sám. Všichni spojenci padli v boji.");
                                                 Surtr.Location.setActiveFalse();
                                                 break;
                                             }
                                             else
                                             {
-                                                Console.WriteLine("\nNepřátelé jsou příliš silní, než abys je porazil. Budeš muset něco vymyslet...");
-                                                Console.ReadLine();
+                                                Message("\nNepřátelé jsou příliš silní, než abys je porazil. Budeš muset něco vymyslet...");
                                             }
                                             continue;
 
+                                        //VYMYSLET NĚCO LEPŠÍHO
                                         case "2":
                                                 while (true)
                                                 {
-                                                
                                                 Console.WriteLine($"\n1 - Použij něco z inventáře\n2 - Zkus využít krajinu ve svůj " +
                                                 $"prospěch\n3 - Zkusíš něco spešl\n4 - Zpět v nabídce\n");
                                                     string kreativniDecision = Console.ReadLine();
                                                     switch (kreativniDecision)
                                                     {
                                                         case "1":
-                                                        Console.Clear();
-                                                        Console.WriteLine("\nTak copak to tu máme...");
+                                                            Console.Clear();
+                                                            Console.WriteLine("\nTak copak to tu máme...");
                                                             for (int i = 1; i < Surtr.CoMasPoKapsach.Count + 1; i++)
                                                             {
                                                                 Console.WriteLine($"{i} - {Surtr.CoMasPoKapsach[i - 1]}");
@@ -130,166 +133,69 @@ namespace Ragnarok
                                                             switch (pocketDecision)
                                                             {
                                                                 case "1":
-                                                                    if (Surtr.CoMasPoKapsach[0].ucelVeci == Surtr.Location.nepritel.heslo)
-                                                                    {
-                                                                        Console.WriteLine(Surtr.Location.nepritel.message);
-                                                                        Surtr.Location.nepritel.InventoryFalse();
-                                                                        Console.ReadLine();
-                                                                        Console.Clear();
-                                                                    break;
-                                                                    }
-                                                                    else if (Surtr.CoMasPoKapsach[0].ucelVeci == Surtr.Location.spojenec.heslo)
-                                                                    {
-                                                                        Console.WriteLine(Surtr.Location.spojenec.message);
-                                                                        Surtr.Location.nepritel.InventoryFalse();
-                                                                        Console.ReadLine();
-                                                                        Console.Clear();
-                                                                    break;
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        Console.WriteLine("\nNic zvláštního se nestalo.");
-                                                                        Console.ReadLine();
-                                                                        Console.Clear();
-                                                                    continue;
-                                                                    }
-
+                                                                Surtr.Pouzij(0,Surtr);
+                                                                break;
 
                                                                 case "2":
-                                                                    if (Surtr.CoMasPoKapsach[1].ucelVeci == Surtr.Location.nepritel.heslo)
-                                                                    {
-                                                                        Console.WriteLine(Surtr.Location.nepritel.message);
-                                                                        Surtr.Location.nepritel.InventoryFalse();
-                                                                        Console.ReadLine();
-                                                                        Console.Clear();
+                                                                Surtr.Pouzij(1, Surtr);
+                                                                break;
+
+                                                            case "3":
+                                                                Surtr.Pouzij(2, Surtr);
+                                                                break;
+
+                                                            case "4":
+                                                                if (Surtr.CoMasPoKapsach.Contains(new Veci("Žvýkačky Winterfresh", "zvejky")))
+                                                                {
+                                                                    Surtr.Pouzij(3, Surtr);
                                                                     break;
-                                                                    }
-                                                                    else if (Surtr.CoMasPoKapsach[1].ucelVeci == Surtr.Location.spojenec.heslo)
-                                                                    {
-                                                                        Console.WriteLine(Surtr.Location.spojenec.message);
-                                                                        Surtr.Location.nepritel.InventoryFalse();
-                                                                        Console.ReadLine();
-                                                                        Console.Clear();
-                                                                    break;
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        Console.WriteLine("\nNic zvláštního se nestalo.");
-                                                                        Console.ReadLine();
-                                                                        Console.Clear();
+                                                                }
+
+                                                                else
+                                                                {
+                                                                    Message("\nVyber z nabízených možností");
                                                                     continue;
-                                                                    }
-
-
-                                                                case "3":
-                                                                    if (Surtr.CoMasPoKapsach[2].ucelVeci == Surtr.Location.nepritel.heslo)
-                                                                    {
-                                                                        Console.WriteLine(Surtr.Location.nepritel.message);
-                                                                        Surtr.Location.nepritel.InventoryFalse();
-                                                                        Console.ReadLine();
-                                                                        Console.Clear();
-                                                                    break;
-                                                                    }
-                                                                    else if (Surtr.CoMasPoKapsach[2].ucelVeci == Surtr.Location.spojenec.heslo)
-                                                                    {
-                                                                        Console.WriteLine(Surtr.Location.spojenec.message);
-                                                                        Surtr.Location.nepritel.InventoryFalse();
-                                                                        Console.ReadLine();
-                                                                        Console.Clear();
-                                                                    break;
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        Console.WriteLine("\nNic zvláštního se nestalo.");
-                                                                        Console.ReadLine();
-                                                                        Console.Clear();
-                                                                    continue;
-                                                                    }
-
-
-                                                                case "4":
-                                                                    if (Surtr.CoMasPoKapsach.Count > 3)
-                                                                    {
-                                                                        if (Surtr.CoMasPoKapsach[3].ucelVeci.Equals(Surtr.Location.nepritel.heslo))
-                                                                        {
-                                                                            Console.WriteLine(Surtr.Location.nepritel.message);
-                                                                            Surtr.VecJePryc(Surtr.CoMasPoKapsach[3]);
-                                                                            Surtr.Location.nepritel.InventoryFalse();
-                                                                            Console.ReadLine();
-                                                                            Console.Clear();
-                                                                        break;
-                                                                        }
-                                                                        else if (Surtr.CoMasPoKapsach[3].ucelVeci.Equals(Surtr.Location.spojenec.heslo))
-                                                                        {
-                                                                            Console.WriteLine(Surtr.Location.spojenec.message);
-                                                                            Surtr.VecJePryc(Surtr.CoMasPoKapsach[3]);
-                                                                            Surtr.Location.nepritel.InventoryFalse();
-                                                                            Console.ReadLine();
-                                                                            Console.Clear();
-                                                                        break;
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            Console.WriteLine("\nNic zvláštního se nestalo.");
-                                                                            Console.ReadLine();
-                                                                            Console.Clear();
-                                                                        continue;
-                                                                        }
-
-
-                                                                    }
-                                                                    else Console.WriteLine("\nVyber z nabízených možností");
-                                                                    Console.Clear();
-                                                                    continue;
+                                                                }
 
                                                                 default:
-                                                                    Console.WriteLine("\nVyber z nabízených možností");
-                                                                    Console.Clear();
+                                                                    Message("\nVyber z nabízených možností");
                                                                     continue;
                                                             }
                                                             continue;
 
                                                         case "2":
-                                                        Console.Clear();
-                                                        if (Surtr.Location == Jih)
+                                                            Console.Clear();
+                                                            if (Surtr.Location == Jih)
                                                             {
                                                                 if (Surtr.Location.nepritel.prirodaCheck)
                                                                 {
-                                                                    Console.WriteLine(Texts.event1);
-                                                                    Console.ReadLine();
-                                                                    Console.WriteLine("Nechytil.");
+                                                                    Message(Texts.event1);
+                                                                    Message("Nechytil.");
                                                                     Surtr.Location.nepritel.PrirodaFalse();
-                                                                    Console.ReadLine();
                                                                 }
                                                                 else
                                                                 {
-                                                                    Console.WriteLine("\nUž nemáš žádné hory, které bys trpaslíkům vmetl do tváře.");
-                                                                    Console.ReadLine();
+                                                                    Message("\nUž nemáš žádné hory, které bys trpaslíkům vmetl do tváře.");
                                                                 }
                                                             }
 
                                                             else if (Surtr.Location == Stred)
                                                             {
-                                                                Console.WriteLine(Texts.event2);
-                                                                Console.ReadLine();
-                                                                Console.WriteLine("\nNo ale to je ti teď stejně k hovnu.");
-                                                                Console.ReadLine();
+                                                                Message(Texts.event2);
+                                                                Message("\nNo ale to je ti teď stejně k hovnu.");
                                                             }
 
                                                             else
                                                             {
                                                                 if (Surtr.Location.nepritel.prirodaCheck)
                                                                 {
-                                                                    Console.WriteLine("\nJéé, moře! U moře už jsi nebyl ani nepamatuješ! Sundal sis kaťata a hupsnul do vln!");
-                                                                    Console.ReadLine();
-                                                                    Console.WriteLine(Texts.event3);
+                                                                    Message("\nJéé, moře! U moře už jsi nebyl ani nepamatuješ! Sundal sis kaťata a hupsnul do vln!");
+                                                                    Message(Texts.event3);
                                                                     Surtr.Location.nepritel.PrirodaFalse();
-                                                                    Console.ReadLine();
                                                                 }
                                                                 else
                                                                 {
-                                                                    Console.WriteLine("\nUž ne, už jsi nadělal dost škody na morálce nepřátel.");
-                                                                    Console.ReadLine();
+                                                                    Message("\nUž ne, už jsi nadělal dost škody na morálce nepřátel.");
                                                                 }
                                                             }
                                                             break;
@@ -300,20 +206,17 @@ namespace Ragnarok
                                                             {
                                                                 if (Surtr.Location.nepritel.specialCheck)
                                                                 {
-                                                                    Console.WriteLine(Texts.event4);
-                                                                    Console.ReadLine();
+                                                                    Message(Texts.event4);
                                                                     Surtr.Location.nepritel.SpecialFalse();
                                                                 }
                                                                 else
                                                                 {
-                                                                    Console.WriteLine("\nSvým strašným zpěvem jsi již zastavil útok elfů. Není potřeba dál děsit i vlastní muže.");
-                                                                    Console.ReadLine();
+                                                                    Message("\nSvým strašným zpěvem jsi již zastavil útok elfů. Není potřeba dál děsit i vlastní muže.");
                                                                 }
                                                             }
                                                             else
                                                             {
-                                                                Console.WriteLine("\nKde nic není, ani Surt nebere...");
-                                                                Console.ReadLine();
+                                                                Message("\nKde nic není, ani Surt nebere...");
                                                             }
                                                             break;
 
@@ -321,28 +224,29 @@ namespace Ragnarok
                                                             break;
 
                                                         default:
-                                                            Console.WriteLine("\nVyber správnou možnost.");
+                                                            Message("\nVyber správnou možnost.");
                                                             continue;
                                                     }
                                                 break;
                                                 }
                                             continue;
+
+                                        //ODEJÍT
                                         case "3":
                                             break;
 
                                         default:
-                                            Console.WriteLine("\nVyber správnou možnost.");
+                                            Message("\nVyber správnou možnost.");
                                             continue;
                                     }
                                     break;
                                 }
                             }
                             else
-                                Console.WriteLine("Už jsi zde úkol splnil a měl bys jít bojovat jinam.");
-                                Console.ReadLine();
-
+                                Message("Už jsi zde úkol splnil a měl bys jít bojovat jinam.");
                             break;
 
+                        //ZMĚNIT LOKACI
                         case "2":
                             Console.Clear();
                             while (true)
@@ -367,7 +271,6 @@ namespace Ragnarok
                                         Bojiste.ChangeLocation(Stred, Surtr);
                                         break;
 
-
                                     case "Sever": case "sever":
                                         Bojiste.ChangeLocation(Sever, Surtr);
                                         break;
@@ -376,7 +279,7 @@ namespace Ragnarok
                                         break;
 
                                     default:
-                                        Console.WriteLine("\nZadej správné umístění.");
+                                        Message("\nZadej správné umístění.");
                                         continue;
                                 }
                                 break;
@@ -384,14 +287,14 @@ namespace Ragnarok
                             }
                             break;
 
+                        //ZABÍT FREYE/ZAHÁJIT KONEC SVĚTA
                         case "3":
                             Console.Clear();
 
                             if (Frey.alive)
                             {
-                                Console.WriteLine($"\nPo úvodu bitvy se postavíš jednomu z hlavních bohů - {Frey}ovi. Víš, že\n" +
+                                Message($"\nPo úvodu bitvy se postavíš jednomu z hlavních bohů - {Frey}ovi. Víš, že\n" +
                                     $"u sebe nemá zbraň - kouzelný meč, kterého se vzdal kvůli své lásce.");
-                                Console.ReadLine();
                                 Console.WriteLine(Texts.frey1);
                                 while (true)
                                 {
@@ -401,21 +304,18 @@ namespace Ragnarok
                                         case "1":
                                             Console.WriteLine($"\nZaútočil jsi na {Frey}e a s obří silou jsi ho svým ohnivým mečem {mec}m \nrozsekl " +
                                                 $"ve dví, až z něj zbyl jen černý škvarek.");
-                                            Console.WriteLine(Texts.freyFire);
+                                            Message(Texts.freyFire);
                                             Frey.setDead();
                                             menu.Remove("3 - Utkáš se s Freyem");
-                                            Console.ReadLine();
                                             break;
 
                                         case "2":
-                                            Console.WriteLine($"\nNasral jsi ho.");
-                                            Console.ReadLine();
+                                            Message($"\nNasral jsi ho.");
                                             Console.WriteLine($"\nPak jsi ho svým ohnivým mečem rozsekl " +
                                                 $"ve dví, až z něj zbyl jen černý škvarek.");
-                                            Console.WriteLine(Texts.freyFire);
+                                            Message(Texts.freyFire);
                                             Frey.setDead();
                                             menu.Remove("3 - Utkáš se s Freyem");
-                                            Console.ReadLine();
                                             break;
                                         default:
                                             continue;
@@ -426,33 +326,28 @@ namespace Ragnarok
 
                             else if (!Jih.active && !Sever.active && !Stred.active && !Frey.alive)
                             {
-                                Console.WriteLine(Texts.end1);
-                                Console.ReadLine();
+                                Message(Texts.end1);
                                 Console.Clear();
                                 Console.WriteLine(Texts.end2);
-                                Console.WriteLine(Texts.endPic);
-                                Console.ReadLine();
+                                Message(Texts.endPic);
                                 go = false;
                                 break;
                             }
 
                             else
                             {
-                                Console.WriteLine("\nZadej správné číslo.\n");
+                                Message("\nZadej správné číslo.\n");
                                 continue;
                             }
-
                             break;
 
                         default:
-                            Console.WriteLine("\nZadej správné číslo.\n");
-                            continue;
-                                                    
+                            Message("\nZadej správné číslo.\n");
+                            continue;             
                     }
                     break;
                 }
             }
         }
-
     }
 }

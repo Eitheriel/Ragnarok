@@ -35,6 +35,29 @@ namespace Ragnarok
 
         public void setLocation(Bojiste misto) => Location = misto;
 
+        public void Pouzij(int index, Hero Surtr)
+        {
+            if (Surtr.CoMasPoKapsach[index].ucelVeci == Surtr.Location.nepritel.heslo)
+            {
+                Console.WriteLine(Surtr.Location.nepritel.message);
+                Surtr.Location.nepritel.InventoryFalse();
+                Console.ReadLine();
+                Console.Clear();
+            }
+            else if (Surtr.CoMasPoKapsach[index].ucelVeci == Surtr.Location.spojenec.heslo)
+            {
+                Console.WriteLine(Surtr.Location.spojenec.message);
+                Surtr.Location.nepritel.InventoryFalse();
+                Console.ReadLine();
+                Console.Clear();
+            }
+            else
+            {
+                Console.WriteLine("\nNic zvláštního se nestalo.");
+                Console.ReadLine();
+                Console.Clear();
+            }
+        }
         public override string ToString() => Name;
     }
 }

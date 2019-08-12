@@ -15,11 +15,6 @@ namespace Ragnarok
             ucelVeci = heslo;
         }
 
-        /*public bool Pouzij(Veci veci)
-        {
-            return true;
-        }*/
-
         public override string ToString() => jmenoVeci;
 
     }
