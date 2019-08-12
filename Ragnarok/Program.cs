@@ -109,7 +109,7 @@ namespace Ragnarok
                                                 Message("\nNepřátelé jsou příliš silní, než abys je porazil. Budeš muset něco vymyslet...");
                                             }
                                             continue;
-
+                                            
                                         //VYMYSLET NĚCO LEPŠÍHO
                                         case "2":
                                                 while (true)
