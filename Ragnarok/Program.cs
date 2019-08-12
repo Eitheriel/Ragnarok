@@ -7,11 +7,8 @@ namespace Ragnarok
 {
     class Program
     {
-        public static void Message(string text)
-        {
-            Console.WriteLine(text);
-            Console.ReadLine();
-        }
+        public static void Message(string text) {Console.WriteLine(text); Console.ReadLine();}
+
         static void Main(string[] args)
         {
             Armada OhniviObri= new Armada("Ohniví Obři", "nic", Texts.proZbytek);

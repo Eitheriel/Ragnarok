@@ -29,8 +29,6 @@ namespace Ragnarok
             }
         }
 
-        public void VecJePryc(Veci vec) => _ = CoMasPoKapsach.Remove(vec);
-
         public void setDead() => alive = false;
 
         public void setLocation(Bojiste misto) => Location = misto;

@@ -54,7 +54,8 @@ namespace Ragnarok
 
 
         //ASCII arts:
-        public static string gameLogo = $" ______                                  _    " +
+        public static string gameLogo = $"" +
+                    $" ______                                  _    " +
                     $"\n | ___ \\                                | |   " +
                     $"\n | |_/ /__ _  __ _ _ __   __ _ _ __ ___ | | __" +
                     $"\n |    // _` |/ _` | '_ \\ / _` | '__/ _ \\| |/ /" +

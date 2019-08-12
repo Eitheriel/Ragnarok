@@ -14,7 +14,6 @@ namespace Ragnarok
             jmenoVeci = vlozJmenoVeci;
             ucelVeci = heslo;
         }
-
         public override string ToString() => jmenoVeci;
 
     }
