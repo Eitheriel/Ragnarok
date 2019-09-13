@@ -11,43 +11,65 @@ namespace Ragnarok
 
         static void Main(string[] args)
         {
-            Armada OhniviObri= new Armada("Ohniví Obři", "nic", Texts.proZbytek);
+            /**********************
+             * Inicializace armád *
+             * ********************/
+            Armada OhniviObri = new Armada("Ohniví Obři", "nic", Texts.proZbytek);
             Armada LedoviObri = new Armada("Ledoví obři", "zvejky", Texts.proLedove);
             Armada ArmadyHelu = new Armada("Armády říše Hell", "nic", Texts.proZbytek);
             Armada Elfove = new Armada("Elfové a trpaslíci", "nic", Texts.proZbytek);
             Armada Asgardane = new Armada("Asgarďané", "kondomy", Texts.proAsgard);
             Armada Einherjars = new Armada("Einherjars", "nic", Texts.proZbytek);
 
-            //Prednastavení cílů
+            /**********************
+             * Přednastavení cílů *
+             * ********************/
             Elfove.InventoryFalse();
             Asgardane.InventoryFalse();
             Asgardane.SpecialFalse();
             Einherjars.PrirodaFalse();
             Einherjars.SpecialFalse();
 
+            /************************
+             * Inicializace přírody *
+             * **********************/
+
             Priroda Les = new Priroda("Les");
             Priroda More = new Priroda("Moře");
             Priroda Hory = new Priroda("Hory");
+
+            /***********************
+             * Inicializace bojišť *
+             * *********************/
 
             Bojiste Jih = new Bojiste("Jih", Hory, OhniviObri, Elfove);
             Bojiste Stred = new Bojiste("Střed", Les, LedoviObri, Einherjars);
             Bojiste Sever = new Bojiste("Sever", More, ArmadyHelu, Asgardane);
             Bojiste[] seznamBojist = { Jih, Stred, Sever };
-            
+
+            /***********************
+             * Inicializace hrdinů *
+             * *********************/
 
             Hero Surtr = new Hero("Surtr", Jih);
             Hero Frey = new Hero("Frey", Jih);
+
+            /*************************************
+             * Inicializace předmětů v inventáři *
+             * ***********************************/
 
             Veci[] seznamVeci = { new Veci("Čtyři penny z výletu do Londýna", "money"),
                 new Veci("Dávno prošlá krabička kondomů", "kondomy"),
                 new Veci("Svačina z domova", "jidlo"),
                 new Veci("Žvýkačky Winterfresh","zvejky")};
-
+            Veci mec = new Veci("Surtalogi", "Freyova hlava");
             Surtr.PridejDoKapes(seznamVeci);
 
-            Veci mec = new Veci("Surtalogi", "Freyova hlava");
-
             List<string> menu = new List<string> {"1 - Půjdeš do boje!", "2 - Půjdeš do jiné části bojiště", "3 - Utkáš se s Freyem"};
+
+            /********************
+             * Textový úvod hry *
+             * ******************/
 
             Console.WriteLine(Texts.gameLogo);
             Message(Texts.intro1);
@@ -59,6 +81,10 @@ namespace Ragnarok
             Message(Texts.intro4);
             Message(Texts.intro5);
 
+            /***************
+             * ZAČÁTEK HRY *
+             * *************/
+
             bool go = true;
 
             while (go) {
@@ -67,7 +93,7 @@ namespace Ragnarok
                 {
                     if (!Sever.active && !Stred.active && !Jih.active && !Frey.alive)
                     {
-                        menu.Add("3 - Zničíš celý svět");
+                        if (!menu.Contains("3 - Zničíš celý svět")) menu.Add("3 - Zničíš celý svět");
                     }
 
                     //HLAVNÍ MENU
@@ -286,3 +312,4 @@ namespace Ragnarok
         }
     }
 }
+ 

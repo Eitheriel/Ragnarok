@@ -35,7 +35,7 @@ namespace Ragnarok
             }
             else
             {
-                Console.WriteLine("Na jihu už jsi vše splnil, nemáš důvod se tam vracet.");
+                Console.WriteLine("Tam už jsi vše splnil, nemáš důvod se tam vracet.");
                 Console.ReadLine();
             }
         }
