@@ -10,6 +10,7 @@ namespace Ragnarok
         public bool alive { get; private set; }
         public Bojiste Location { get; private set; }
         public Dictionary<int,Veci> Kapsy { get; private set; }
+        public Dictionary<int, Bojiste> CeleBojiste { get; private set; }
 
         public Hero (string vlozJmeno, Bojiste misto)
         {
@@ -17,6 +18,7 @@ namespace Ragnarok
             Name = vlozJmeno;
             Kapsy = new Dictionary<int, Veci>();
             alive = true;
+            CeleBojiste = new Dictionary<int, Bojiste>();
         }
         public void PridejDoKapes(params Veci[] vecicky)
         {
@@ -62,6 +64,20 @@ namespace Ragnarok
                 Console.WriteLine("\nNic zvláštního se nestalo.");
                 Console.ReadLine();
                 Console.Clear();
+            }
+        }
+        public void PodivejSePoBojisti(Bojiste[] seznam)
+        {
+            int i =1;
+            CeleBojiste.Clear();
+            foreach (Bojiste a in seznam)
+            {
+                if (a != Location)
+                {
+                    CeleBojiste.Add(i, a);
+                    Console.WriteLine($"{i} - {a}");
+                    i++;
+                }
             }
         }
         public override string ToString() => Name;

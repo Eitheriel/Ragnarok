@@ -33,6 +33,7 @@ namespace Ragnarok
             Bojiste Stred = new Bojiste("Střed", Les, LedoviObri, Einherjars);
             Bojiste Sever = new Bojiste("Sever", More, ArmadyHelu, Asgardane);
             Bojiste[] seznamBojist = { Jih, Stred, Sever };
+            
 
             Hero Surtr = new Hero("Surtr", Jih);
             Hero Frey = new Hero("Frey", Jih);
@@ -207,35 +208,15 @@ namespace Ragnarok
                             {
                                 Console.WriteLine($"\nTvým bojištěm je nyní {Surtr.Location}. Můžeš si vybrat:\n\nBuď zůstaneš tam, kde jsi (zmáčkni Enter),\nnebo napiš do konzole místo, kam chceš jít:\n");
 
-                                foreach (Bojiste b in seznamBojist)
-                                {
-                                    if (b != Surtr.Location)
-                                        Console.WriteLine(b);
-                                }
+                                Surtr.PodivejSePoBojisti(seznamBojist);
                                 Console.WriteLine("\n");
                                 string zmenaMista = Console.ReadLine();
 
-                                switch (zmenaMista)
+                                if (int.TryParse(zmenaMista, out int result) && Surtr.CeleBojiste.ContainsKey(result))
                                 {
-                                    case "Jih": case "jih":
-                                        Bojiste.ChangeLocation(Jih, Surtr);
-                                        break;
-
-                                    case "Stred": case "stred": case "Střed": case "střed":
-                                        Bojiste.ChangeLocation(Stred, Surtr);
-                                        break;
-
-                                    case "Sever": case "sever":
-                                        Bojiste.ChangeLocation(Sever, Surtr);
-                                        break;
-
-                                    case "":
-                                        break;
-
-                                    default:
-                                        Message("\nZadej správné umístění.");
-                                        continue;
+                                    Bojiste.ChangeLocation(Surtr.CeleBojiste[result], Surtr);
                                 }
+                                else Message("Zvol správnou možnost");
                                 break;
 
                             }
