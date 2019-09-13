@@ -37,11 +37,13 @@ namespace Ragnarok
             Hero Surtr = new Hero("Surtr", Jih);
             Hero Frey = new Hero("Frey", Jih);
 
+            Veci[] seznamVeci = { new Veci("Čtyři penny z výletu do Londýna", "money"),
+                new Veci("Dávno prošlá krabička kondomů", "kondomy"),
+                new Veci("Svačina z domova", "jidlo"),
+                new Veci("Žvýkačky Winterfresh","zvejky")};
 
-            Surtr.CoMasPoKapsach.Add(new Veci("Čtyři penny z výletu do Londýna","money"));
-            Surtr.CoMasPoKapsach.Add(new Veci("Dávno prošlá krabička kondomů","kondomy"));
-            Surtr.CoMasPoKapsach.Add(new Veci("Svačina z domova","jidlo"));
-            Surtr.CoMasPoKapsach.Add(new Veci("Žvýkačky Winterfresh","zvejky"));
+            Surtr.PridejDoKapes(seznamVeci);
+
             Veci mec = new Veci("Surtalogi", "Freyova hlava");
 
             List<string> menu = new List<string> {"1 - Půjdeš do boje!", "2 - Půjdeš do jiné části bojiště", "3 - Utkáš se s Freyem"};
@@ -81,13 +83,12 @@ namespace Ragnarok
                             Console.Clear();
                             if (Surtr.Location.active)
                             {
-                                Message($"\n{Surtr.Location} je plný bojů! Tvou část armády " +
-                                        $"zde tvoří {Surtr.Location.spojenec}, \nnepřítelem jsou ti {Surtr.Location.nepritel}. " +
-                                        $"Co se krajiny týče, vidíš zde {Surtr.Location.priroda}.");
+                                Console.WriteLine($"\n{Surtr.Location} je plný bojů! Tvou část armády " +
+                                                  $"zde tvoří {Surtr.Location.spojenec}, \nnepřítelem jsou ti {Surtr.Location.nepritel}. " +
+                                                  $"Co se krajiny týče, vidíš zde {Surtr.Location.priroda}.");
 
                                 while (true)
                                 {
-                                    Console.Clear();
                                     Console.WriteLine($"\nCo uděláš?\n\n" +
                                         $"1 - Zaútočíš na tu trapnou armádu, kterou tvoří {Surtr.Location.nepritel}, přímo!\n" +
                                         $"2 - Vymyslíš něco lepšího\n" +
@@ -104,100 +105,63 @@ namespace Ragnarok
                                                 Surtr.Location.setActiveFalse();
                                                 break;
                                             }
-                                            else
-                                            {
-                                                Message("\nNepřátelé jsou příliš silní, než abys je porazil. Budeš muset něco vymyslet...");
-                                            }
+                                            else Message("\nNepřátelé jsou příliš silní, než abys je porazil. Budeš muset něco vymyslet...");
                                             continue;
                                             
                                         //VYMYSLET NĚCO LEPŠÍHO
                                         case "2":
-                                                while (true)
+                                            while (true)
+                                            {
+                                            Console.WriteLine($"\n1 - Použij něco z inventáře\n2 - Zkus využít krajinu ve svůj " +
+                                            $"prospěch\n3 - Zkusíš něco spešl\n4 - Zpět v nabídce\n");
+                                                string kreativniDecision = Console.ReadLine();
+                                                switch (kreativniDecision)
                                                 {
-                                                Console.WriteLine($"\n1 - Použij něco z inventáře\n2 - Zkus využít krajinu ve svůj " +
-                                                $"prospěch\n3 - Zkusíš něco spešl\n4 - Zpět v nabídce\n");
-                                                    string kreativniDecision = Console.ReadLine();
-                                                    switch (kreativniDecision)
-                                                    {
-                                                        case "1":
-                                                            Console.Clear();
-                                                            Console.WriteLine("\nTak copak to tu máme...");
-                                                            for (int i = 1; i < Surtr.CoMasPoKapsach.Count + 1; i++)
+                                                    case "1":
+                                                        Console.Clear();
+                                                        Console.WriteLine("\nTak copak to tu máme...");
+                                                        Surtr.PodivejSeDoKapes();
+                                                        string pocketDecision = Console.ReadLine();
+                                                        if (int.TryParse(pocketDecision, out int result) && Surtr.Kapsy.ContainsKey(result))
+                                                        {
+                                                            Surtr.Pouzij(result, Surtr);
+                                                        }
+                                                        else Message("Zvol správnou možnost");
+                                                        continue;
+
+                                                    case "2":
+                                                        Console.Clear();
+                                                        if (Surtr.Location == Jih)
+                                                        {
+                                                            if (Surtr.Location.nepritel.prirodaCheck)
                                                             {
-                                                                Console.WriteLine($"{i} - {Surtr.CoMasPoKapsach[i - 1]}");
+                                                                Message(Texts.event1);
+                                                                Message("Nechytil.");
+                                                                Surtr.Location.nepritel.PrirodaFalse();
                                                             }
-                                                            string pocketDecision = Console.ReadLine();
-                                                            switch (pocketDecision)
+                                                            else Message("\nUž nemáš žádné hory, které bys trpaslíkům vmetl do tváře.");
+                                                            
+                                                        }
+
+                                                        else if (Surtr.Location == Stred)
+                                                        {
+                                                            Message(Texts.event2);
+                                                            Message("\nNo ale to je ti teď stejně k hovnu.");
+                                                        }
+
+                                                        else
+                                                        {
+                                                            if (Surtr.Location.nepritel.prirodaCheck)
                                                             {
-                                                                case "1":
-                                                                Surtr.Pouzij(0,Surtr);
-                                                                break;
-
-                                                                case "2":
-                                                                Surtr.Pouzij(1, Surtr);
-                                                                break;
-
-                                                            case "3":
-                                                                Surtr.Pouzij(2, Surtr);
-                                                                break;
-
-                                                            case "4":
-                                                                if (Surtr.CoMasPoKapsach.Contains(new Veci("Žvýkačky Winterfresh", "zvejky")))
-                                                                {
-                                                                    Surtr.Pouzij(3, Surtr);
-                                                                    break;
-                                                                }
-
-                                                                else
-                                                                {
-                                                                    Message("\nVyber z nabízených možností");
-                                                                    continue;
-                                                                }
-
-                                                                default:
-                                                                    Message("\nVyber z nabízených možností");
-                                                                    continue;
+                                                                Message("\nJéé, moře! U moře už jsi nebyl ani nepamatuješ! Sundal sis kaťata a hupsnul do vln!");
+                                                                Message(Texts.event3);
+                                                                Surtr.Location.nepritel.PrirodaFalse();
                                                             }
-                                                            continue;
+                                                            else Message("\nUž ne, už jsi nadělal dost škody na morálce nepřátel.");
+                                                        }
+                                                        break;
 
-                                                        case "2":
-                                                            Console.Clear();
-                                                            if (Surtr.Location == Jih)
-                                                            {
-                                                                if (Surtr.Location.nepritel.prirodaCheck)
-                                                                {
-                                                                    Message(Texts.event1);
-                                                                    Message("Nechytil.");
-                                                                    Surtr.Location.nepritel.PrirodaFalse();
-                                                                }
-                                                                else
-                                                                {
-                                                                    Message("\nUž nemáš žádné hory, které bys trpaslíkům vmetl do tváře.");
-                                                                }
-                                                            }
-
-                                                            else if (Surtr.Location == Stred)
-                                                            {
-                                                                Message(Texts.event2);
-                                                                Message("\nNo ale to je ti teď stejně k hovnu.");
-                                                            }
-
-                                                            else
-                                                            {
-                                                                if (Surtr.Location.nepritel.prirodaCheck)
-                                                                {
-                                                                    Message("\nJéé, moře! U moře už jsi nebyl ani nepamatuješ! Sundal sis kaťata a hupsnul do vln!");
-                                                                    Message(Texts.event3);
-                                                                    Surtr.Location.nepritel.PrirodaFalse();
-                                                                }
-                                                                else
-                                                                {
-                                                                    Message("\nUž ne, už jsi nadělal dost škody na morálce nepřátel.");
-                                                                }
-                                                            }
-                                                            break;
-
-                                                        case "3":
+                                                    case "3":
                                                         Console.Clear();
                                                         if (Surtr.Location == Jih)
                                                             {
@@ -206,26 +170,20 @@ namespace Ragnarok
                                                                     Message(Texts.event4);
                                                                     Surtr.Location.nepritel.SpecialFalse();
                                                                 }
-                                                                else
-                                                                {
-                                                                    Message("\nSvým strašným zpěvem jsi již zastavil útok elfů. Není potřeba dál děsit i vlastní muže.");
-                                                                }
+                                                                else Message("\nSvým strašným zpěvem jsi již zastavil útok elfů. Není potřeba dál děsit i vlastní muže.");
                                                             }
-                                                            else
-                                                            {
-                                                                Message("\nKde nic není, ani Surt nebere...");
-                                                            }
-                                                            break;
+                                                        else Message("\nKde nic není, ani Surt nebere...");
+                                                        break;
 
-                                                        case "4":
-                                                            break;
+                                                    case "4":
+                                                        break;
 
-                                                        default:
-                                                            Message("\nVyber správnou možnost.");
-                                                            continue;
-                                                    }
-                                                break;
+                                                    default:
+                                                        Message("Vyber správnou možnost.");
+                                                        continue;
                                                 }
+                                                break;
+                                            }
                                             continue;
 
                                         //ODEJÍT
@@ -239,8 +197,7 @@ namespace Ragnarok
                                     break;
                                 }
                             }
-                            else
-                                Message("Už jsi zde úkol splnil a měl bys jít bojovat jinam.");
+                            else Message("Už jsi zde úkol splnil a měl bys jít bojovat jinam.");
                             break;
 
                         //ZMĚNIT LOKACI
