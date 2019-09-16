@@ -13,7 +13,7 @@ namespace Ragnarok
         public bool inventoryCheck { get; private set; }
         public bool specialCheck { get; private set; }
 
-        public Armada (string jmeno, string heslo, string message)
+        public Armada (string jmeno, string heslo="", string message="")
         {
             jmenoArmady = jmeno;
             this.heslo = heslo;
