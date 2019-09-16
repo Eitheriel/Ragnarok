@@ -74,12 +74,11 @@ namespace Ragnarok
              * Inicializace předmětů v inventáři *
              * ***********************************/
 
-            Veci[] seznamVeci = { new Veci("Čtyři penny z výletu do Londýna", "money"),
-                new Veci("Dávno prošlá krabička kondomů", "kondomy"),
-                new Veci("Svačina z domova", "jidlo"),
-                new Veci("Žvýkačky Winterfresh","zvejky")};
-
             Inventar SurtruvInventar = new Inventar();
+            Veci[] seznamVeci = { new Veci("Čtyři penny z výletu do Londýna", "money"),
+                                  new Veci("Dávno prošlá krabička kondomů", "kondomy"),
+                                  new Veci("Svačina z domova", "jidlo"),
+                                  new Veci("Žvýkačky Winterfresh","zvejky")};
             SurtruvInventar.PridejDoKapes(seznamVeci);
             Veci mec = new Veci("Surtalogi", "Freyova hlava");
 
@@ -113,7 +112,10 @@ namespace Ragnarok
             bool go = true;
             while (go) {
 
-                //HLAVNÍ MENU
+                ///////////////
+                //HLAVNÍ MENU//
+                ///////////////
+
                 Console.Clear();
                 Console.WriteLine(" Co uděláš?\n ----------\n");
                 VypisMenu(menu);

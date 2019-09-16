@@ -12,7 +12,6 @@ namespace Ragnarok.Menu.Boj
         Bojiste Stred { get; set; }
         Bojiste Sever { get; set; }
 
-
         public Bojovani(Hero surt, Inventar surtInv, Bojiste Jih, Bojiste Stred, Bojiste Sever)
         {
             Surtr = surt;
@@ -21,7 +20,6 @@ namespace Ragnarok.Menu.Boj
             this.Stred = Stred;
             this.Sever = Sever;
         }
-
 
         public static void Message(string text) { Console.WriteLine(text); Console.ReadLine(); }
         public void BojMenu()
@@ -66,9 +64,5 @@ namespace Ragnarok.Menu.Boj
                 continue;
             }
         }
-
-
-
-
     }
 }
