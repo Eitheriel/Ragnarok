@@ -90,7 +90,7 @@ namespace Ragnarok
             ZabitFreye menuFrey = new ZabitFreye(Frey, menu, mec);
             ZmenaLokace zmenaLok = new ZmenaLokace(Surtr, seznamBojist);
             Bojovani velkyBoj = new Bojovani(Surtr, SurtruvInventar, Jih, Stred, Sever);
-
+            
             /********************
              * Textový úvod hry *
              * ******************/
