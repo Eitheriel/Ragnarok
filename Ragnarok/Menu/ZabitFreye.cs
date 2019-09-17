@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Ragnarok.Menu
 {
-    class ZabitFreye
+    static class ZabitFreye
     {
-        Hero Frey { get; set; }
+        /*Hero Frey { get; set; }
         List<string> menu { get; set; }
         Veci mec { get; set; }
         public ZabitFreye(Hero FJakoFrey,List<string> menu,Veci mec)
@@ -14,10 +14,9 @@ namespace Ragnarok.Menu
             Frey = FJakoFrey;
             this.menu = menu;
             this.mec = mec;
+        }*/
 
-        }
-
-        public void SmrtFreye()
+        public static void SmrtFreye(Hero Frey, List<string> menu, Veci mec)
         {
 
             if (Frey.alive)

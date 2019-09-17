@@ -18,7 +18,6 @@ namespace Ragnarok
             jmenoArmady = jmeno;
             this.heslo = heslo;
             this.message = message;
-
             prirodaCheck = true;
             inventoryCheck = true;
             specialCheck = true;

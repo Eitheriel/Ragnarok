@@ -16,10 +16,10 @@ namespace Ragnarok
         {
             int i = 1;
             menuDict.Clear();
-            foreach (string a in menu1)
+            foreach (string polozkaMenu in menu1)
             {
-                menuDict.Add(i, a);
-                Console.WriteLine($"{i} - {a}");
+                menuDict.Add(i, polozkaMenu);
+                Console.WriteLine($"{i} - {polozkaMenu}");
                 i++;
                 
             }
@@ -87,8 +87,9 @@ namespace Ragnarok
              * ******/
 
             List<string> menu = new List<string> { "Půjdeš do boje!", "Půjdeš do jiné části bojiště", "Utkáš se s Freyem", "Zničíš celý svět" };
-            ZabitFreye menuFrey = new ZabitFreye(Frey, menu, mec);
-            ZmenaLokace zmenaLok = new ZmenaLokace(Surtr, seznamBojist);
+            //Využít statiku nebo ne?
+            //ZabitFreye menuFrey = new ZabitFreye(Frey, menu, mec);
+            //ZmenaLokace zmenaLok = new ZmenaLokace(Surtr, seznamBojist);
             Bojovani velkyBoj = new Bojovani(Surtr, SurtruvInventar, Jih, Stred, Sever);
             
             /********************
@@ -124,30 +125,20 @@ namespace Ragnarok
 
                 if (int.TryParse(menuRozhodnuti, out int menuNumber) && menuDict.ContainsKey(menuNumber))
                 {
+                    Console.Clear();
+
                     //JÍT DO BOJE
                     if (menuDict[menuNumber] == "Půjdeš do boje!")
                     {
-                        Console.Clear();
-                        if (Surtr.Location.active)
-                        {
-                            velkyBoj.BojMenu();
-                        }
+                        if (Surtr.Location.active) velkyBoj.BojMenu();
                         else Message("Už jsi zde úkol splnil a měl bys jít bojovat jinam.");
                     }
 
                     //ZMĚNIT LOKACI
-                    else if (menuDict[menuNumber] == "Půjdeš do jiné části bojiště")
-                    {
-                        Console.Clear();
-                        zmenaLok.ZmenmeLokaci();
-                    }
+                    else if (menuDict[menuNumber] == "Půjdeš do jiné části bojiště") ZmenaLokace.ZmenmeLokaci(Surtr, seznamBojist);
 
                     //ZABÍT FREYE
-                    else if (menuDict[menuNumber] == "Utkáš se s Freyem")
-                    {
-                        Console.Clear();
-                        menuFrey.SmrtFreye();
-                    }
+                    else if (menuDict[menuNumber] == "Utkáš se s Freyem") ZabitFreye.SmrtFreye(Frey,menu,mec);
 
                     //ZNIČIT CELÝ SVĚT
                     else if (menuDict[menuNumber] == "Zničíš celý svět")

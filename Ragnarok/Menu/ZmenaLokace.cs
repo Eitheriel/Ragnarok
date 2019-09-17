@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Ragnarok.Menu
 {
-    class ZmenaLokace
+    static class ZmenaLokace
     {
-        Hero Surtr { get; set; }
+        /*Hero Surtr { get; set; }
         Bojiste[] seznamBojist { get; set; }
 
         public ZmenaLokace(Hero Surtr, Bojiste[] seznam)
@@ -14,10 +14,9 @@ namespace Ragnarok.Menu
             this.Surtr = Surtr;
             seznamBojist = seznam;
 
-        }
+        }*/
 
-
-        public void ZmenmeLokaci ()
+        public static void ZmenmeLokaci (Hero Surtr,Bojiste[] seznamBojist)
         {
             while (true)
             {
