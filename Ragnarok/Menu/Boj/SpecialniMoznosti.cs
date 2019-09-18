@@ -51,28 +51,28 @@ namespace Ragnarok.Menu.Boj
                             if (Surtr.Location.nepritel.prirodaCheck)
                             {
                                 Message(Texts.event1);
-                                Message("Nechytil.");
+                                Message(Texts.event1_1);
                                 Surtr.Location.nepritel.PrirodaFalse();
                             }
-                            else Message("\nUž nemáš žádné hory, které bys trpaslíkům vmetl do tváře.");
+                            else Message(Texts.event1_2);
 
                         }
 
                         else if (Surtr.Location == Stred)
                         {
                             Message(Texts.event2);
-                            Message("\nNo ale to je ti teď stejně k hovnu.");
+                            Message(Texts.event2_1);
                         }
 
                         else
                         {
                             if (Surtr.Location.nepritel.prirodaCheck)
                             {
-                                Message("\nJéé, moře! U moře už jsi nebyl ani nepamatuješ! Sundal sis kaťata a hupsnul do vln!");
                                 Message(Texts.event3);
+                                Message(Texts.event3_1);
                                 Surtr.Location.nepritel.PrirodaFalse();
                             }
-                            else Message("\nUž ne, už jsi nadělal dost škody na morálce nepřátel.");
+                            else Message(Texts.event3_2);
                         }
                         break;
 
@@ -85,7 +85,7 @@ namespace Ragnarok.Menu.Boj
                                 Message(Texts.event4);
                                 Surtr.Location.nepritel.SpecialFalse();
                             }
-                            else Message("\nSvým strašným zpěvem jsi již zastavil útok elfů. Není potřeba dál děsit i vlastní muže.");
+                            else Message(Texts.event4_1);
                         }
                         else Message("\nKde nic není, ani Surt nebere...");
                         break;

@@ -6,21 +6,33 @@ namespace Ragnarok.Menu.Boj.Specialni
 {
     class Speciality
     {
-        Hero Surtr { get; set; }
-        public Speciality(Hero Surt)
+        public static void Message(string text) { Console.WriteLine(text); Console.ReadLine(); }
+
+        public static void UdalostTypPriroda(Hero Surtr, string prvni, string druhy, string treti)
         {
-            Surtr = Surt;
+            if (Surtr.Location.nepritel.prirodaCheck)
+            {
+                Message(prvni);
+                Message(druhy);
+                Surtr.Location.nepritel.PrirodaFalse();
+            }
+            else Message(treti);
+        }
+        public static void UdalostTypPriroda(Hero Surtr, string prvni, string druhy)
+        {
+            Message(prvni);
+            Message(druhy);
         }
 
-        public void UdalostTyp1()
+        public static void UdalostiTypSpecial(Hero Surtr, string prvni, string druhy)
         {
-
+            if (Surtr.Location.nepritel.specialCheck)
+            {
+                Message(prvni);
+                Surtr.Location.nepritel.SpecialFalse();
+            }
+            else Message(druhy);
         }
 
-        public void UdalostTyp2()
-        {
-
-        }
-        
     }
 }

@@ -27,21 +27,26 @@ namespace Ragnarok
                                                                         "'Když nemůže Mohamed k hoře, musí hora k Mohamedovi', jak vždycky říkával tvůj \n" +
                                                                         "turecký spolubydlící na koleji. Elegantně přiskočíš k blízké hoře, urveš její vrchol, \n" +
                                                                         "celý ho mrštíš na trpasličího krále a řekneš: 'Chytej!'";
+        public static string event1_1 = "Nechytil";
+        public static string event1_2 = "\nUž nemáš žádné hory, které bys trpaslíkům vmetl do tváře.";
 
         public static string event2 = "\n Prohlížíš si místní lesy. Jsou krásně husté, místy smíšené, ale většinou \n" +
                                                                     "jehličnaté. Na kraji lesa zurčí malý pramínek, který se rozšiřuje v úzkou bystřinu. Jistě je \n" +
                                                                     "zde hojnost divoké zvěře, ptactva i lesních plodů.";
+        public static string event2_1 = "\nNo ale to je ti teď stejně k hovnu.";
 
-        public static string event3 = "\nVznešení Asgarďané, kteří byli spolu s Valkýrami v prvních řadách nepřátelské armády, \n" +
+        public static string event3 = "\nJéé, moře! U moře už jsi nebyl ani nepamatuješ! Sundal sis kaťata a hupsnul do vln!";
+        public static string event3_1 = "\nVznešení Asgarďané, kteří byli spolu s Valkýrami v prvních řadách nepřátelské armády, \n" +
                                                                         "měli tu smůlu, že spatřili tvé privátní partie dřív, než je zalilo milosrdné moře. Maje ten pohled \n" +
                                                                         "před očima, nebyli schopni nadále bojovat a jen stěží se bránili dorážení tvé armády.";
-
+        public static string event3_2 = "\nUž ne, už jsi nadělal dost škody na morálce nepřátel.";
         public static string event4 = "\nTvoji vojáci jsou nervózní a vidíš, že mají pochyby o vítězství. " +
                                                                         "Proto se rozhodneš předvést jim překvapení, které sis plánoval na vánoční besídku. " +
                                                                         "Pozveš si k sobě generály tvých vojsk, se kterými jsi tajně trénoval a vytvořil " +
                                                                         "folkový kvartet. A zatímco nepřítel se kvapem blíží, předstoupíte před své muže a " +
                                                                         "začnete z plna hrdla zpívat bojovou píseň, abyste jim dodali odvahy. \n\nHlavní elf, překvapen disharmonickým zvukem, " +
                                                                         "který z lesa neznal, se zarazil. To ti dává čas vymyslet řádný protiúder.";
+        public static string event4_1 = "\nSvým strašným zpěvem jsi již zastavil útok elfů. Není potřeba dál děsit i vlastní muže.";
 
         //End:
         public static string end1 = "\nKonečně nadešla poslední chvíle světa. Zůstal jsi na bojišti úplně sám. " +
