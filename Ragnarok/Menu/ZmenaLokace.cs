@@ -29,6 +29,7 @@ namespace Ragnarok.Menu
                 if (int.TryParse(zmenaMista, out int result) && Surtr.CeleBojiste.ContainsKey(result))
                 {
                     Bojiste.ChangeLocation(Surtr.CeleBojiste[result], Surtr);
+                    break;
                 }
                 else if (zmenaMista == "") break;
                 else Program.Message("\nZvol správnou možnost");

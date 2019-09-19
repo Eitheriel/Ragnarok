@@ -29,7 +29,7 @@ namespace Ragnarok
                 Console.WriteLine($"{ kvp.Key} - {kvp.Value}");
             }
         }
-        public void Pouzij(int index, Hero Surtr)
+        public bool Pouzij(int index, Hero Surtr)
         {
             if (Kapsy[index].ucelVeci == Surtr.Location.nepritel.heslo)
             {
@@ -38,6 +38,7 @@ namespace Ragnarok
                 Kapsy.Remove(index);
                 Console.ReadLine();
                 Console.Clear();
+                return false;
             }
             else if (Kapsy[index].ucelVeci == Surtr.Location.spojenec.heslo)
             {
@@ -46,12 +47,14 @@ namespace Ragnarok
                 Kapsy.Remove(index);
                 Console.ReadLine();
                 Console.Clear();
+                return false;
             }
             else
             {
                 Console.WriteLine("\nNic zvláštního se nestalo.");
                 Console.ReadLine();
                 Console.Clear();
+                return true;
             }
         }
     }

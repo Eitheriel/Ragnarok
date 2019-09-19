@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ragnarok.Menu.Boj.Specialni
 {
-    class Speciality
+    static class Speciality
     {
         public static void Message(string text) { Console.WriteLine(text); Console.ReadLine(); }
 

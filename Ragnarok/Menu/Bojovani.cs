@@ -45,6 +45,7 @@ namespace Ragnarok.Menu.Boj
                         {
                             Message("\nVyrazil jsi do útoku spolu se spojenci a oháněje se svým ohnivým mečem \nzabil jsi všechny nepřátele, až jsi zůstal na bojišti docela sám. Všichni spojenci padli v boji.");
                             Surtr.Location.setActiveFalse();
+                            go = false;
                             break;
                         }
                         else Message("\nNepřátelé jsou příliš silní, než abys je porazil. Budeš muset něco vymyslet...");
