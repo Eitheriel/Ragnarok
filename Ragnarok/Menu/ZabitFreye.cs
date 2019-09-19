@@ -19,7 +19,7 @@ namespace Ragnarok.Menu
         public static void SmrtFreye(Hero Frey, List<string> menu, Veci mec)
         {
 
-            if (Frey.alive)
+            if (Frey.Alive)
             {
                 Program.Message($"\nPo úvodu bitvy se postavíš jednomu z hlavních bohů - {Frey}ovi. Víš, že\n" +
                     $"u sebe nemá zbraň - kouzelný meč, kterého se vzdal kvůli své lásce.");
@@ -33,7 +33,7 @@ namespace Ragnarok.Menu
                             Console.WriteLine($"\nZaútočil jsi na {Frey}e a s obří silou jsi ho svým ohnivým mečem {mec}m \nrozsekl " +
                                 $"ve dví, až z něj zbyl jen černý škvarek.");
                             Program.Message(Texts.freyFire);
-                            Frey.setDead();
+                            Frey.SetDead();
                             menu.Remove("Utkáš se s Freyem");
                             break;
 
@@ -42,7 +42,7 @@ namespace Ragnarok.Menu
                             Console.WriteLine($"\nPak jsi ho svým ohnivým mečem rozsekl " +
                                                                 $"ve dví, až z něj zbyl jen černý škvarek.");
                             Program.Message(Texts.freyFire);
-                            Frey.setDead();
+                            Frey.SetDead();
                             menu.Remove("Utkáš se s Freyem");
                             break;
                         default:

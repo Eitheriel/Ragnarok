@@ -7,7 +7,7 @@ namespace Ragnarok
     public class Hero
     {
         public string Name { get; }
-        public bool alive { get; private set; }
+        public bool Alive { get; private set; }
         public Bojiste Location { get; private set; }
         public Dictionary<int, Bojiste> CeleBojiste { get; private set; }
 
@@ -15,13 +15,13 @@ namespace Ragnarok
         {
             Location = misto;
             Name = vlozJmeno;
-            alive = true;
+            Alive = true;
             CeleBojiste = new Dictionary<int, Bojiste>();
         }
 
-        public void setDead() => alive = false;
+        public void SetDead() => Alive = false;
 
-        public void setLocation(Bojiste misto) => Location = misto;
+        public void SetLocation(Bojiste misto) => Location = misto;
 
         public void ZobrazBojiste(Bojiste[] seznam)
         {

@@ -6,30 +6,30 @@ namespace Ragnarok
 {
     public class Bojiste
     {
-        public string castBojiste { get; }
-        public bool active { get; private set; }
-        public Priroda priroda { get; }
-        public Armada spojenec { get; }
-        public Armada nepritel { get; }
+        public string CastBojiste { get; }
+        public bool Active { get; private set; }
+        public Priroda Priroda { get; }
+        public Armada Spojenec { get; }
+        public Armada Nepritel { get; }
 
         public Bojiste (string cast, Priroda priroda1, Armada spojenec1, Armada nepritel1)
         {
-            castBojiste = cast;
-            active = true;
-            priroda = priroda1;
-            spojenec = spojenec1;
-            nepritel = nepritel1;
+            CastBojiste = cast;
+            Active = true;
+            Priroda = priroda1;
+            Spojenec = spojenec1;
+            Nepritel = nepritel1;
         }
 
         // když už bude lokace projitá (splněný úkol), přehodí se to na false, 
         // aby se ve switchi objevila hláška, že už je lokace projitá.
-        public void setActiveFalse() => active = false;
+        public void SetActiveFalse() => Active = false;
 
         public static void ChangeLocation(Bojiste Boj, Hero hero)
         {
-            if (Boj.active)
+            if (Boj.Active)
             {
-                hero.setLocation(Boj);
+                hero.SetLocation(Boj);
                 Console.WriteLine($"\nPřesunul ses do lokace {hero.Location}.");
                 Console.ReadLine();
             }
@@ -40,6 +40,6 @@ namespace Ragnarok
             }
         }
 
-        public override string ToString() => castBojiste;
+        public override string ToString() => CastBojiste;
     }
 }

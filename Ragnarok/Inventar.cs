@@ -31,19 +31,19 @@ namespace Ragnarok
         }
         public bool Pouzij(int index, Hero Surtr)
         {
-            if (Kapsy[index].ucelVeci == Surtr.Location.nepritel.heslo)
+            if (Kapsy[index].ucelVeci == Surtr.Location.Nepritel.heslo)
             {
-                Console.WriteLine(Surtr.Location.nepritel.message);
-                Surtr.Location.nepritel.InventoryFalse();
+                Console.WriteLine(Surtr.Location.Nepritel.message);
+                Surtr.Location.Nepritel.InventoryFalse();
                 Kapsy.Remove(index);
                 Console.ReadLine();
                 Console.Clear();
                 return false;
             }
-            else if (Kapsy[index].ucelVeci == Surtr.Location.spojenec.heslo)
+            else if (Kapsy[index].ucelVeci == Surtr.Location.Spojenec.heslo)
             {
-                Console.WriteLine(Surtr.Location.spojenec.message);
-                Surtr.Location.nepritel.InventoryFalse();
+                Console.WriteLine(Surtr.Location.Spojenec.message);
+                Surtr.Location.Nepritel.InventoryFalse();
                 Kapsy.Remove(index);
                 Console.ReadLine();
                 Console.Clear();

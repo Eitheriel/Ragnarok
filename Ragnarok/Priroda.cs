@@ -6,13 +6,13 @@ namespace Ragnarok
 {
     public class Priroda
     {
-        public string typ { get; }
+        public string Typ { get; }
 
         public Priroda (string nazevTypu)
         {
-            typ = nazevTypu;
+            Typ = nazevTypu;
         }
 
-        public override string ToString() => typ;
+        public override string ToString() => Typ;
     }
 }

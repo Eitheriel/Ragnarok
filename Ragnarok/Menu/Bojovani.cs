@@ -7,7 +7,7 @@ namespace Ragnarok.Menu.Boj
     class Bojovani
     {
         Hero Surtr { get; set; }
-        Inventar surtInv { get; set; }
+        Inventar SurtInv { get; set; }
         Bojiste Jih { get; set; }
         Bojiste Stred { get; set; }
         Bojiste Sever { get; set; }
@@ -15,7 +15,7 @@ namespace Ragnarok.Menu.Boj
         public Bojovani(Hero surt, Inventar surtInv, Bojiste Jih, Bojiste Stred, Bojiste Sever)
         {
             Surtr = surt;
-            this.surtInv = surtInv;
+            this.SurtInv = surtInv;
             this.Jih = Jih;
             this.Stred = Stred;
             this.Sever = Sever;
@@ -29,10 +29,10 @@ namespace Ragnarok.Menu.Boj
             {
                 Console.Clear();
                 Console.WriteLine($"\n{Surtr.Location} je plný bojů! Tvou část armády " +
-                  $"zde tvoří {Surtr.Location.spojenec}, \nnepřítelem jsou ti {Surtr.Location.nepritel}. " +
-                  $"Co se krajiny týče, vidíš zde {Surtr.Location.priroda}.");
+                  $"zde tvoří {Surtr.Location.Spojenec}, \nnepřítelem jsou ti {Surtr.Location.Nepritel}. " +
+                  $"Co se krajiny týče, vidíš zde {Surtr.Location.Priroda}.");
                 Console.WriteLine($"\nCo uděláš?\n\n" +
-                    $"1 - Zaútočíš na tu trapnou armádu, kterou tvoří {Surtr.Location.nepritel}, přímo!\n" +
+                    $"1 - Zaútočíš na tu trapnou armádu, kterou tvoří {Surtr.Location.Nepritel}, přímo!\n" +
                     $"2 - Vymyslíš něco lepšího\n" +
                     $"3 - Odejdeš.\n");
                 string coTed = Console.ReadLine();
@@ -41,10 +41,10 @@ namespace Ragnarok.Menu.Boj
                 {
                     //NAPADNOUT ARMÁDU
                     case "1":
-                        if (Surtr.Location.nepritel.prirodaCheck == false && Surtr.Location.nepritel.inventoryCheck == false && Surtr.Location.nepritel.specialCheck == false)
+                        if (Surtr.Location.Nepritel.prirodaCheck == false && Surtr.Location.Nepritel.inventoryCheck == false && Surtr.Location.Nepritel.specialCheck == false)
                         {
                             Message("\nVyrazil jsi do útoku spolu se spojenci a oháněje se svým ohnivým mečem \nzabil jsi všechny nepřátele, až jsi zůstal na bojišti docela sám. Všichni spojenci padli v boji.");
-                            Surtr.Location.setActiveFalse();
+                            Surtr.Location.SetActiveFalse();
                             go = false;
                             break;
                         }
@@ -53,7 +53,7 @@ namespace Ragnarok.Menu.Boj
 
                     //VYMYSLET NĚCO LEPŠÍHO
                     case "2":
-                        SpecialniMoznosti specMozn = new SpecialniMoznosti(Surtr, surtInv, Jih, Stred, Sever);
+                        SpecialniMoznosti specMozn = new SpecialniMoznosti(Surtr, SurtInv, Jih, Stred, Sever);
                         specMozn.Specky();
                         continue;
 

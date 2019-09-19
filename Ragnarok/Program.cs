@@ -130,7 +130,7 @@ namespace Ragnarok
                     //JÍT DO BOJE
                     if (menuDict[menuNumber] == "Půjdeš do boje!")
                     {
-                        if (Surtr.Location.active) velkyBoj.BojMenu();
+                        if (Surtr.Location.Active) velkyBoj.BojMenu();
                         else Message("Už jsi zde úkol splnil a měl bys jít bojovat jinam.");
                     }
 
@@ -143,13 +143,12 @@ namespace Ragnarok
                     //ZNIČIT CELÝ SVĚT
                     else if (menuDict[menuNumber] == "Zničíš celý svět")
                     {
-                        if (!Jih.active && !Sever.active && !Stred.active && !Frey.alive)
+                        if (!Jih.Active && !Sever.Active && !Stred.Active && !Frey.Alive)
                         {
                             Message(Texts.end1);
                             Console.Clear();
                             Console.WriteLine(Texts.end2);
                             Message(Texts.endPic);
-                            go = false;
                             break;
                         }
                         else Message("\nJeště jsi nesplnil všechny úkoly.");

@@ -10,11 +10,11 @@ namespace Ragnarok.Menu.Boj.Specialni
 
         public static void UdalostTypPriroda(Hero Surtr, string prvni, string druhy, string treti)
         {
-            if (Surtr.Location.nepritel.prirodaCheck)
+            if (Surtr.Location.Nepritel.prirodaCheck)
             {
                 Message(prvni);
                 Message(druhy);
-                Surtr.Location.nepritel.PrirodaFalse();
+                Surtr.Location.Nepritel.PrirodaFalse();
             }
             else Message(treti);
         }
@@ -26,10 +26,10 @@ namespace Ragnarok.Menu.Boj.Specialni
 
         public static void UdalostiTypSpecial(Hero Surtr, string prvni, string druhy)
         {
-            if (Surtr.Location.nepritel.specialCheck)
+            if (Surtr.Location.Nepritel.specialCheck)
             {
                 Message(prvni);
-                Surtr.Location.nepritel.SpecialFalse();
+                Surtr.Location.Nepritel.SpecialFalse();
             }
             else Message(druhy);
         }
