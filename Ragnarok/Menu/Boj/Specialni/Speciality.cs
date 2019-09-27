@@ -2,36 +2,34 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ragnarok.Menu.Boj.Specialni
+namespace Ragnarok
 {
     static class Speciality
     {
-        public static void Message(string text) { Console.WriteLine(text); Console.ReadLine(); }
-
         public static void UdalostTypPriroda(Hero Surtr, string prvni, string druhy, string treti)
         {
             if (Surtr.Location.Nepritel.prirodaCheck)
             {
-                Message(prvni);
-                Message(druhy);
+                Util.Message(prvni);
+                Util.Message(druhy);
                 Surtr.Location.Nepritel.PrirodaFalse();
             }
-            else Message(treti);
+            else Util.Message(treti);
         }
         public static void UdalostTypPriroda(Hero Surtr, string prvni, string druhy)
         {
-            Message(prvni);
-            Message(druhy);
+            Util.Message(prvni);
+            Util.Message(druhy);
         }
 
         public static void UdalostiTypSpecial(Hero Surtr, string prvni, string druhy)
         {
             if (Surtr.Location.Nepritel.specialCheck)
             {
-                Message(prvni);
+                Util.Message(prvni);
                 Surtr.Location.Nepritel.SpecialFalse();
             }
-            else Message(druhy);
+            else Util.Message(druhy);
         }
 
     }

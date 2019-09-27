@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ragnarok.Menu
+namespace Ragnarok
 {
     static class ZmenaLokace
     {
@@ -32,7 +32,7 @@ namespace Ragnarok.Menu
                     break;
                 }
                 else if (zmenaMista == "") break;
-                else Program.Message("\nZvol správnou možnost");
+                else Util.Message("\nZvol správnou možnost");
             }
         }
     }

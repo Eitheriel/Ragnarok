@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ragnarok.Menu.Boj
+namespace Ragnarok
 {
     class Bojovani
     {
@@ -48,7 +48,8 @@ namespace Ragnarok.Menu.Boj
                             go = false;
                             break;
                         }
-                        else Message("\nNepřátelé jsou příliš silní, než abys je porazil. Budeš muset něco vymyslet...");
+                        else
+                            Message("\nNepřátelé jsou příliš silní, než abys je porazil. Budeš muset něco vymyslet...");
                         continue;
 
                     //VYMYSLET NĚCO LEPŠÍHO

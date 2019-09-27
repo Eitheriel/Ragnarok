@@ -1,6 +1,4 @@
-﻿using Ragnarok.Menu;
-using Ragnarok.Menu.Boj;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,7 +9,6 @@ namespace Ragnarok
     {
         static Dictionary<int, string> menuDict = new Dictionary<int, string>();
 
-        public static void Message(string text) { Console.WriteLine(text); Console.ReadLine(); }
         public static void VypisMenu(List<string> menu1)
         {
             int i = 1;
@@ -97,14 +94,14 @@ namespace Ragnarok
              * ******************/
 
             Console.WriteLine(Texts.gameLogo);
-            Message(Texts.intro1);
-            Message(Texts.intro2);
+            Util.Message(Texts.intro1);
+            Util.Message(Texts.intro2);
 
             Console.Clear();
 
-            Message(Texts.intro3);
-            Message(Texts.intro4);
-            Message(Texts.intro5);
+            Util.Message(Texts.intro3);
+            Util.Message(Texts.intro4);
+            Util.Message(Texts.intro5);
 
             /***************
              * ZAČÁTEK HRY *
@@ -131,7 +128,7 @@ namespace Ragnarok
                     if (menuDict[menuNumber] == "Půjdeš do boje!")
                     {
                         if (Surtr.Location.Active) velkyBoj.BojMenu();
-                        else Message("Už jsi zde úkol splnil a měl bys jít bojovat jinam.");
+                        else Util.Message("Už jsi zde úkol splnil a měl bys jít bojovat jinam.");
                     }
 
                     //ZMĚNIT LOKACI
@@ -145,18 +142,18 @@ namespace Ragnarok
                     {
                         if (!Jih.Active && !Sever.Active && !Stred.Active && !Frey.Alive)
                         {
-                            Message(Texts.end1);
+                            Util.Message(Texts.end1);
                             Console.Clear();
                             Console.WriteLine(Texts.end2);
-                            Message(Texts.endPic);
+                            Util.Message(Texts.endPic);
                             break;
                         }
-                        else Message("\nJeště jsi nesplnil všechny úkoly.");
+                        else Util.Message("\nJeště jsi nesplnil všechny úkoly.");
                     }
                 }
                 else
                 {
-                    Message("\nZadej správné číslo.\n");
+                    Util.Message("\nZadej správné číslo.\n");
                     continue;
                 }
             }

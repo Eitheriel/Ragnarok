@@ -1,9 +1,8 @@
-﻿using Ragnarok.Menu.Boj.Specialni;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ragnarok.Menu.Boj
+namespace Ragnarok
 {
     class SpecialniMoznosti
     {
@@ -21,7 +20,6 @@ namespace Ragnarok.Menu.Boj
             this.Stred = Stred;
             this.Sever = Sever;
         }
-        public static void Message(string text) { Console.WriteLine(text); Console.ReadLine(); }
 
         public void Specky()
         {
@@ -43,7 +41,7 @@ namespace Ragnarok.Menu.Boj
                         {
                             go = SurtruvInventar.Pouzij(result, Surtr);
                         }
-                        else Message("Zvol správnou možnost");
+                        else Util.Message("Zvol správnou možnost");
                         continue;
 
                     case "2":
@@ -56,14 +54,14 @@ namespace Ragnarok.Menu.Boj
                     case "3":
                         Console.Clear();
                         if (Surtr.Location == Jih) Speciality.UdalostiTypSpecial(Surtr, Texts.event4, Texts.event4_1);
-                        else Message("\nKde nic není, ani Surt nebere...");
+                        else Util.Message("\nKde nic není, ani Surt nebere...");
                         continue;
 
                     case "4":
                         break;
 
                     default:
-                        Message("Vyber správnou možnost.");
+                        Util.Message("Vyber správnou možnost.");
                         continue;
                 }
                 break;
